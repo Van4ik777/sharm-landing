@@ -1,12 +1,12 @@
 {
-  "title": "Landing page template for developers & startups",
-  "text": "Beautifully designed templates using React.js, ant design and styled-components! Save weeks of time and build your landing page in minutes.",
-  "button": [
+  "title": "ШАРМ - Шевченківська Активна Районна Молодь",
+  "text": "ШАРМ — це об’єднання президентів шкіл Шевченківського району. Разом вони організовують події, втілюють ідеї та представляють учнівську молодь.",
+  "button": [ 
     {
-      "title": "Explore"
+      "title": "Далі"
     },
     {
-      "title": "Learn more",
+      "title": "Дізнатися більше",
       "color": "#fff"
     }
   ]

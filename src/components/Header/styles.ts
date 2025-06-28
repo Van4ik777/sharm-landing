@@ -9,6 +9,25 @@ export const HeaderSection = styled("header")`
     align-items: center;
     text-align: center;
   }
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+  padding-bottom: 0px; 
+`;
+
+export const BottomLine = styled.div` 
+  margin: 0 auto;
+  border-bottom: 3px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  border-image-source: linear-gradient(to right,rgb(130, 54, 252),rgb(83, 9, 136));
 `;
 
 export const LogoContainer = styled(Link)`
@@ -84,7 +103,8 @@ export const Outline = styled(MenuOutlined)`
 export const Span = styled("span")`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-
+  font-size: 1.4rem;
+  color: rgb(14, 14, 14);
   &:hover,
   &:active,
   &:focus {

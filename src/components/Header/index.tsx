@@ -2,11 +2,9 @@ import { useState } from "react";
 import { Row, Col, Drawer } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
 import Container from "../../common/Container";
-import { SvgIcon } from "../../common/SvgIcon";
 import { Button } from "../../common/Button";
 import {
   HeaderSection,
-  LogoContainer,
   Burger,
   NotHidden,
   Menu,
@@ -14,7 +12,9 @@ import {
   Label,
   Outline,
   Span,
+  BottomLine,
 } from "./styles";
+import LogoText from "../../common/SvgIcon/LogoText";
 
 const Header = ({ t }: { t: TFunction }) => {
   const [visible, setVisibility] = useState(false);
@@ -34,33 +34,33 @@ const Header = ({ t }: { t: TFunction }) => {
     return (
       <>
         <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("About")}</Span>
+          <Span >{t("blablalba")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
+          <Span>{t("bleblelbe")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
+          <Span>{t("blublublu")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}
         >
           <Span>
-            <Button>{t("Contact")}</Button>
+            <Button>{t("brbrbrb")}</Button>
           </Span>
         </CustomNavLinkSmall>
+
       </>
     );
   };
 
   return (
+    <>
     <HeaderSection>
       <Container>
         <Row justify="space-between">
-          <LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" width="101px" height="64px" />
-          </LogoContainer>
+          <LogoText />
           <NotHidden>
             <MenuItem />
           </NotHidden>
@@ -83,6 +83,7 @@ const Header = ({ t }: { t: TFunction }) => {
         </Drawer>
       </Container>
     </HeaderSection>
+    </>
   );
 };
 
