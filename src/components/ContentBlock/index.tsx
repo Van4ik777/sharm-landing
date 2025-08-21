@@ -15,6 +15,7 @@ import {
   StyledRow,
   ButtonWrapper,
 } from "./styles";
+import { useEffect, useState } from "react";
 
 const ContentBlock = ({
   icon,
@@ -32,9 +33,22 @@ const ContentBlock = ({
       behavior: "smooth",
     });
   };
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); 
+    };
+
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <ContentSection>
+      <div style={{marginTop: "50px"}}>
       <Fade direction={direction} triggerOnce>
         <StyledRow
           justify="space-between"
@@ -47,8 +61,10 @@ const ContentBlock = ({
           </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
-              <h6>{t(title)}</h6>
-              <Content>{t(content)}</Content>
+              <h6 style={isMobile ? { fontSize: "28px" } : { fontSize: "44px" }}>
+                {t(title)}
+              </h6>        
+          <Content>{t(content)}</Content>
               {direction === "right" ? (
                 <ButtonWrapper>
                   {typeof button === "object" &&
@@ -105,6 +121,7 @@ const ContentBlock = ({
           </Col>
         </StyledRow>
       </Fade>
+      </div>
     </ContentSection>
   );
 };

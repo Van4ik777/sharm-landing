@@ -106,12 +106,10 @@ export const FooterContainer = styled("div")`
     }
   }
 
-  @media screen and (max-width: 769px) {
+  @media screen and (max-width: 768px) {
     width: auto;
-
-    a:not(:last-child) {
-      display: none;
-    }
+    justify-content: center;
+    margin-top: 1rem;
   }
 
   div {

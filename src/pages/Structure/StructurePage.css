@@ -1,0 +1,48 @@
+.container {
+  max-width: 900px;
+  margin: 100px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 16px;
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 768px) {
+  .container {
+    margin: 80px auto;
+    padding: 0 20px;
+  }
+
+  .treeContainer {
+    border-left: 3px solid #7D5FFF;
+    padding-left: 14px;
+  }
+
+  .treeNode {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .nodeTitle {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 26px;
+    margin-top: 50px !important;
+    margin-bottom: 14px !important;
+  }
+
+  h2, h3 {
+    font-size: 20px !important;
+  }
+
+  .modalContent {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+
+  .modalContent img {
+    max-height: 200px !important;
+  }
+}
