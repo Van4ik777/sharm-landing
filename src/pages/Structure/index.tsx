@@ -17,7 +17,6 @@ const icons = {
 
 interface Person {
   name: string;
-  phone: string;
   email?: string;
 }
 
@@ -39,11 +38,10 @@ const organs: StructureItem[] = [
     image: "prez.png",
     description:
       "Керує ШАРМом, організовує засідання, координує діяльність органу. Обирається на два періоди (семестри).",
-    contact: {
-        phone: "+380 67 101 11 22",
-        email: "president@sharm.ua",
-        name: "Деніс Коваленко"
-    },
+  contact: {
+    email: "sharm.lider.ua@gmail.com",
+    name: "Танчак Любов"
+  },
   },
   {
     id: "vicepresident",
@@ -52,11 +50,10 @@ const organs: StructureItem[] = [
     image: "vprez.png",
     description:
       "Заступник президента, виконує його обов'язки у разі відсутності. Обирається на два періоди.",
-    contact: {
-        phone: "+380 67 202 22 33",
-        email: "vicepresident@sharm.ua",
-        name: "Уляна Петрівна"
-    },
+  contact: {
+    email: "sharm.lider.ua@gmail.com",
+    name: "Черній Анна"
+  },
   },
   {
     id: "premier",
@@ -65,91 +62,78 @@ const organs: StructureItem[] = [
     image: "prem.png",
     description:
       "Відповідає за протоколи засідань, зв'язок між членами ШАРМу. Обирається на два періоди.",
-    contact: {
-        phone: "+380 67 303 33 44",
-        email: "premier@sharm.ua",
-        name: "Кирило Іванович"
-    },
+  contact: {
+    email: "sharm.lider.ua@gmail.com",
+    name: "Шатковська Марія"
   },
-  {
-    id: "minister",
-    title: "Міністр",
-    icon: icons.minister,
-    description: "Відповідальний за координацію секторів та загальні питання.",
-  },
+  }
 ];
 
 const sectors: StructureItem[] = [
   {
-    id: "patriot",
-    title: "Військово-патріотичний сектор",
-    icon: icons.patriot,
-    image: "svs.png",
-    description: "Організовує заходи військово-патріотичного спрямування.",
-    minister: {
-      name: "Олег Гончар",
-      phone: "+380 67 222 33 44",
-      email: "patriot@sharm.ua",
-    },
-  },
-  {
     id: "culture",
-    title: "Сектор культури",
+    title: "Сектор Культури",
     icon: icons.culture,
     image: "cult.png",
     description: "Реалізовує культурні та суспільні ініціативи.",
     minister: {
       name: "Світлана Мироненко",
-      phone: "+380 68 333 44 55",
-      email: "culture@sharm.ua",
+      email: "sharm.lider.ua@gmail.com",
     },
   },
   {
-    id: "sport",
-    title: "Сектор спорту та екології",
-    icon: icons.sport,
-    image: "sport.png",
-    description: "Організовує спортивні події та екопроєкти.",
+    id: "patriot",
+    title: "Сектор Військового-Патріотичного Спрямування",
+    icon: icons.patriot,
+    image: "svs.png",
+    description: "Організовує заходи військово-патріотичного спрямування.",
     minister: {
-      name: "Анна Кравченко",
-      phone: "+380 67 555 66 77",
-      email: "sport@sharm.ua",
+      name: "Олег Гончар",
+      email: "sharm.lider.ua@gmail.com",
+    },
+  },
+  {
+    id: "development",
+    title: "Сектор Розвитку",
+    icon: icons.development,
+    image: "rozvt.png",
+    description: "Відповідає за вдосконалення внутрішньої структури та підтримку інших секторів.",
+    minister: {
+      name: "Оксана Левченко",
+      email: "sharm.lider.ua@gmail.com",
     },
   },
   {
     id: "info",
-    title: "Сектор інформації",
+    title: "Сектор Інформації",
     icon: icons.info,
     image: "inf.png",
     description: "Займається соцмережами та зовнішньою комунікацією.",
     minister: {
       name: "Дмитро Савченко",
-      phone: "+380 68 666 77 88",
-      email: "info@sharm.ua",
+      email: "sharm.lider.ua@gmail.com",
     },
   },
   {
-    id: "development",
-    title: "Сектор розвитку",
-    icon: icons.development,
-    image: "rozvt.png",
-    description: "Вдосконалює внутрішню структуру та підтримує інші сектори.",
+    id: "health-eco",
+    title: "Сектор Здоров’я та Екології",
+    icon: icons.sport,
+    image: "sport.png",
+    description: "Організовує спортивні події, екопроєкти та ініціативи зі здорового способу життя.",
     minister: {
-      name: "Оксана Левченко",
-      phone: "+380 50 777 88 99",
-      email: "development@sharm.ua",
+      name: "Анна Кравченко",
+      email: "sharm.lider.ua@gmail.com",
     },
   },
   {
-    id: "bank",
-    title: "НБШ — Національний банк ШАРМу",
-    icon: icons.bank,
-    image: "zazicav.png",
-    description: "Відповідальна особа призначається.",
+    id: "finance",
+    title: "Сектор Підприємницької Діяльності та Фінансової Грамотності",
+    icon: icons.finance,
+    image: "graphs.svg",
+    description: "Розвиває підприємницькі навички та фінансову грамотність серед членів організації.",
     minister: {
       name: "Валентин Коваленко",
-      phone: "+380 67 888 99 00",
-      email: "bank@sharm.ua",
+      email: "sharm.lider.ua@gmail.com",
     },
   },
 ];
@@ -215,8 +199,7 @@ function Modal({
           >
             {minister && (
               <>
-                <div>👤 Міністр: {minister.name}</div>
-                <div>📞 {minister.phone}</div>
+                <div>👤 Керівник сектору: {minister.name}</div>
                 {minister.email && (
                   <div>
                     ✉️{" "}
@@ -230,7 +213,6 @@ function Modal({
             {contact && (
               <>
                 <div>👤 {contact.name}</div>
-                <div>📞 {contact.phone}</div>
                 {contact.email && (
                   <div>
                     ✉️{" "}
@@ -326,8 +308,8 @@ export default function StructurePage() {
                 <div style={styles.nodeTitle}>{sector.title}</div>
                 {sector.minister && (
                   <div style={{ fontSize: 14, color: "#5D3FD3", marginTop: 4 }}>
-                    Міністр: {sector.minister.name} <br />
-                    Тел: {sector.minister.phone}
+                    Керівник сектору: {sector.minister.name} <br />
+                    ✉️ <a style={{ color: "#5D3FD3" }} href={`mailto:${sector.minister.email}`}>{sector.minister.email}</a>
                   </div>
                 )}
               </div>

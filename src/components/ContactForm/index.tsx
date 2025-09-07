@@ -28,6 +28,9 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
         </Col>
         <Col lg={12} md={12} sm={24} xs={24}>
           <Slide direction="right" triggerOnce>
+            <div style={{ marginBottom: 16, fontSize: 16, color: '#5D3FD3', fontWeight: 500 }}>
+              ✉️: <a href="mailto:sharm.lider.ua@gmail.com" style={{ color: '#5D3FD3' }}>sharm.lider.ua@gmail.com</a>
+            </div>
             <FormGroup autoComplete="off" onSubmit={handleSubmit}>
               <Col span={24}>
                 <Input

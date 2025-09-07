@@ -60,8 +60,8 @@ const Verb = () => {
             variants={fadeInUp}
           >
             <img
-              src="/img/svg/verb_main.png"
-              alt="Енергетична верба - фото 1"
+              src="/img/svg/verb2.png"
+              alt="Енергетична верба - фото 2"
               style={{
                 width: "100%",
                 height: "350px",
@@ -82,8 +82,8 @@ const Verb = () => {
             variants={fadeInUp}
           >
             <img
-              src="/img/svg/verb2.png"
-              alt="Енергетична верба - фото 2"
+              src="/img/svg/verb_main.png"
+              alt="Енергетична верба - фото 1"
               style={{
                 width: "100%",
                 height: "350px",

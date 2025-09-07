@@ -36,26 +36,6 @@ const Footer = ({ t }: { t: TFunction }) => {
 
   return (
     <>
-      <FooterSection>
-        <Container>
-          <Row justify="center" align="middle" style={{ textAlign: "center" }}>
-            <Col span={24}>
-              <Language style={{ marginBottom: "1rem" }}>Sharm</Language>
-              <Para style={{ fontSize: "16px", marginBottom: "2rem", maxWidth: "600px", margin: "0 auto 2rem" }}>
-                Інноваційні рішення для вашого бізнесу. Ми створюємо сучасні технології, які допомагають компаніям рости та розвиватися.
-              </Para>
-              <div style={{ marginBottom: "1rem" }}>
-                <Para style={{ fontSize: "14px", color: "#666", marginBottom: "0.5rem" }}>
-                  📧 hello@sharm.team
-                </Para>
-                <Para style={{ fontSize: "14px", color: "#666" }}>
-                  📞 +380 (44) 123-45-67
-                </Para>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </FooterSection>
       <Extra>
         <Container border={true}>
           <Row
@@ -79,12 +59,15 @@ const Footer = ({ t }: { t: TFunction }) => {
               <Para style={{ fontSize: "14px", color: "#666", margin: 0 }}>
                 📍 Шевченківський район, Київ
               </Para>
+              <Para style={{ fontSize: "14px", color: "#666", margin: "0.5rem 0 0" }}>
+                📧 <a href="mailto:sharm.lider.ua@gmail.com" style={{ color: "#666" }}>sharm.lider.ua@gmail.com</a>
+              </Para>
               <Para style={{ fontSize: "12px", color: "#999", margin: "0.5rem 0 0" }}>
                 © 2024 Sharm. Всі права захищені.
               </Para>
             </Col>
             <Col xs={24} sm={8} style={{ textAlign: "center" }}>
-              <FooterContainer style={{ justifyContent: "center" }}>
+              <FooterContainer style={{ justifyContent: "center", gap: "1rem" }}>
                 <SocialLink
                   href="https://github.com/sharm-team"
                   src="github.svg"

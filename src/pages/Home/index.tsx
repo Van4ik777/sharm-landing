@@ -21,7 +21,7 @@ const Home = () => {
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon="main_sharm.png"
+        icon="zazicav.png"
         id="intro"
       />
       <ContentBlock
@@ -40,7 +40,7 @@ const Home = () => {
         direction="right"
         title={MissionContent.title}
         content={MissionContent.text}
-        icon="zazicav.png"
+        icon="main_sharm.png"
         id="mission"
       />
       <Contact
