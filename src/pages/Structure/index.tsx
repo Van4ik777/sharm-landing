@@ -7,12 +7,14 @@ const icons = {
   premier: "📜",
   minister: "🎩",
   bank: "🏦",
-  patriot: "⚔️",      
-  culture: "🎭",      
-  finance: "💰",      
-  sport: "🌱",      
-  info: "📢",         
-  development: "🚀",  
+  patriot: "⚔️",
+  culture: "🎭",
+  finance: "💰",
+  sport: "🌱",
+  info: "📢",
+  development: "🚀",
+  sponsorship: "🤲", // new icon for sponsorship
+  externalinternal: "🌐", // new icon for external/internal development
 };
 
 interface Person {
@@ -78,7 +80,6 @@ const sectors: StructureItem[] = [
     description: "Реалізовує культурні та суспільні ініціативи.",
     minister: {
         name: "Керівник сектору",
-        email: "sharm.lider.ua@gmail.com",
       },
   },
   {
@@ -89,18 +90,16 @@ const sectors: StructureItem[] = [
     description: "Організовує заходи військово-патріотичного спрямування.",
     minister: {
         name: "Керівник сектору",
-        email: "sharm.lider.ua@gmail.com",
       },
   },
   {
     id: "development",
-    title: "Сектор Розвитку",
+    title: "Сектор Внутрішьного Розвитку",
     icon: icons.development,
     image: "rozvt.png",
     description: "Відповідає за вдосконалення внутрішньої структури та підтримку інших секторів.",
     minister: {
         name: "Керівник сектору",
-        email: "sharm.lider.ua@gmail.com",
       },
   },
   {
@@ -111,7 +110,6 @@ const sectors: StructureItem[] = [
     description: "Займається соцмережами та зовнішньою комунікацією.",
     minister:{
         name: "Керівник сектору",
-        email: "sharm.lider.ua@gmail.com",
       },
   },
   {
@@ -123,7 +121,6 @@ const sectors: StructureItem[] = [
 
     minister: {
       name: "Керівник сектору",
-      email: "sharm.lider.ua@gmail.com",
     },
   },
   {
@@ -134,7 +131,26 @@ const sectors: StructureItem[] = [
     description: "Розвиває підприємницькі навички та фінансову грамотність серед членів організації.",
     minister: {
       name: 'Керівник сектору',
-      email: "sharm.lider.ua@gmail.com",
+    },
+  },
+  {
+    id: "sponsorship",
+    title: "Сектор Спонсорства",
+    icon: icons.sponsorship,
+    image: "laugh_sponsor.png",
+    description: "Відповідає за пошук, залучення та підтримку спонсорів для реалізації проєктів та ініціатив організації.",
+    minister: {
+      name: 'Керівник сектору',
+    },
+  },
+  {
+    id: "externalinternal",
+    title: "Сектор Зовнішнього Розвитку",
+    icon: icons.externalinternal,
+    image: "rozvt.png",
+    description: "Займається розвитком зовнішніх зв'язків організації та вдосконаленням внутрішніх процесів.",
+    minister: {
+      name: 'Керівник сектору',
     },
   },
 ];
@@ -198,14 +214,24 @@ function Modal({
               lineHeight: 1.8,
             }}
           >
-            {minister && minister.email && (
+            {minister && (
               <div>
-                ✉️ <a style={{ color: "#5D3FD3" }} href={`mailto:${minister.email}`}>{minister.email}</a>
+                {minister.name && <div>👤 {minister.name}</div>}
+                {minister.email && (
+                  <div>
+                    ✉️ <a style={{ color: "#5D3FD3" }} href={`mailto:${minister.email}`}>{minister.email}</a>
+                  </div>
+                )}
               </div>
             )}
-            {contact && contact.email && (
+            {contact && (
               <div>
-                ✉️ <a style={{ color: "#5D3FD3" }} href={`mailto:${contact.email}`}>{contact.email}</a>
+                {contact.name && <div>👤 {contact.name}</div>}
+                {contact.email && (
+                  <div>
+                    ✉️ <a style={{ color: "#5D3FD3" }} href={`mailto:${contact.email}`}>{contact.email}</a>
+                  </div>
+                )}
               </div>
             )}
           </div>

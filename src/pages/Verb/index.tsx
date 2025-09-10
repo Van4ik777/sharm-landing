@@ -221,25 +221,6 @@ const Verb = () => {
                 </motion.div>
               </Col>
             </Row>
-
-            <div style={{ textAlign: "center", marginTop: "4rem" }}>
-              <Button
-                type="primary"
-                size="large"
-                                  style={{
-                    backgroundColor: "#73d13d",
-                    border: "none",
-                    borderRadius: "10px",
-                    padding: "0 3rem",
-                    height: isMobile ? "50px" : "60px",
-                    fontSize: isMobile ? "16px" : "18px",
-                    fontWeight: "600",
-                    boxShadow: "0 4px 20px rgba(115, 209, 61, 0.3)"
-                  }}
-              >
-                дізнатись більше
-              </Button>
-            </div>
           </Col>
         </Row>
       </motion.div>
