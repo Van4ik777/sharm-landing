@@ -21,7 +21,7 @@ const Home = () => {
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon="zazicav.png"
+        icon="new_main.png"
         id="intro"
       />
       <ContentBlock

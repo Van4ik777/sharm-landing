@@ -5,7 +5,7 @@ import { Button } from "../../common/Button";
 import { MiddleBlockSection, Content, ContentWrapper, ImageContainer, ImageCard, ImageDescription, ImagesWrapper } from "./styles";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { pastProjects, futureProjects } from "../../data/projects";
+import { Projects } from "../../data/projects";
 
 interface MiddleBlockProps {
   title: string;
@@ -30,8 +30,8 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
   }, []);
 
   // Get featured projects - two past projects
-  const featuredPastProject1 = pastProjects[0]; // Most recent past project
-  const featuredPastProject2 = pastProjects[1] || pastProjects[0]; // Second past project
+  const featuredPastProject1 = Projects[0]; // Most recent past project
+  const featuredPastProject2 = Projects[1] || Projects[0]; // Second past project
 
   const handleProjectClick = (projectId: number) => {
     history.push(`/event/${projectId}`);

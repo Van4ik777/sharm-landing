@@ -1,8 +1,8 @@
-import { Card, Row, Col, Button, Typography } from "antd";
+import { Card, Row, Col, Button, Typography, Image } from "antd";
 import { motion, easeInOut } from "framer-motion"; 
 import { useScrollRestoration } from "../../common/useScroolDown";
 import { useHistory } from "react-router-dom";
-import { pastProjects, futureProjects } from "../../data/projects";
+import { Projects as projectsData } from "../../data/projects";
 import { useState, useEffect } from "react";
 
 const fadeInUp = {
@@ -21,20 +21,7 @@ const fadeInUp = {
 const { Meta } = Card;
 const { Title, Paragraph, Text } = Typography;
 
-const stringToColor = (str: string): string => {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
 
-  let color = "#";
-  for (let i = 0; i < 3; i++) {
-    const value = (hash >> (i * 8)) & 0xff;
-    color += ("00" + value.toString(16)).slice(-2);
-  }
-
-  return color;
-};
 
 
 const Projects = () => {
@@ -53,67 +40,28 @@ const Projects = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const handleRegister = (projectId: number | string) => {
-    alert(`Ви зареєструвались на проєкт: ${projectId}`);
-  };
 
   const renderCardMeta = (
     title: string,
-    description: string,
-    sector: string
+    description: string
   ) => {
-    const color = stringToColor(sector);
-
     return (
       <Meta
-        title={
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div
-              style={{
-                width: 12,
-                height: 12,
-                borderRadius: "50%",
-                backgroundColor: color,
-              }}
-            />
-            <Title level={4} style={{ margin: 0 }}>
-              {title}
-            </Title>
-          </div>
-        }
+        title={<Title level={4} style={{ margin: 0 }}>{title}</Title>}
         description={
-          <>
-            <div
-              style={{
-                minHeight: 72,
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
-            >
-              <Paragraph style={{ marginBottom: 0 }}>{description}</Paragraph>
-            </div>
-
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-                marginTop: 12,
-              }}
-            >
-              <div
-                style={{
-                  width: 10,
-                  height: 10,
-                  borderRadius: "50%",
-                  backgroundColor: color,
-                }}
-              />
-              <Text type="secondary" style={{ fontSize: 14 }}>
-                Сектор: {sector.trim()}
-              </Text>
-            </div>
-          </>
+          <div
+            style={{
+              display: '-webkit-box',
+              WebkitLineClamp: 4,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              minHeight: 72,
+              maxHeight: 96,
+            }}
+          >
+            <Paragraph style={{ marginBottom: 0, whiteSpace: 'pre-line' }}>{description}</Paragraph>
+          </div>
         }
       />
     );
@@ -129,12 +77,12 @@ const Projects = () => {
     >
       <Title
         level={2}
-        style={{ textAlign: "center", margin: "4rem 0 2rem", marginTop: 200 }}
+        style={{ textAlign: "center", margin: "4rem 0 2rem", marginTop: 100 }}
       >
-        Майбутні проєкти
+      проєкти
       </Title>
       <Row gutter={[32, 32]}>
-        {futureProjects.map(({ id, title, description, images, sector }, index) => (
+        {[...projectsData].map(({ id, title, description, images }, index) => (
           <Col xs={24} sm={12} md={8} key={id}>
             <motion.div
               custom={index}
@@ -158,26 +106,20 @@ const Projects = () => {
                 }}
                 onClick={() => history.push(`/event/${id}`)}
                 cover={
-                  <img
-                    alt={title}
-                    src={`/img/svg/${images[0]}`}
-                    style={{ height: 220, objectFit: "cover" }}
-                  />
+                  images && images[0] ? (
+                    <Image
+                      alt={title}
+                      src={`/img/svg/${images[0]}`}
+                      style={{ height: 220, objectFit: "cover" }}
+                      preview={true}
+                    />
+                  ) : null
                 }
                 onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
                 onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                actions={[
-                  <Button
-                    type="primary"
-                    key="register"
-                    onClick={() => handleRegister(id)}
-                    style={{ borderRadius: 8, fontWeight: "600",borderColor: "black", }}
-                  >
-                    Зареєструватися
-                  </Button>,
-                ]}
+
               >
-                {renderCardMeta(title, description, sector)}
+                {renderCardMeta(title, description)}
               </Card>
             </motion.div>
           </Col>
@@ -229,7 +171,7 @@ const Projects = () => {
                       fontWeight: 600,
                     }}
                   >
-                    Долучитися до проєкту
+                    дізнатись більше
                   </Button>,
                 ]}
               >
@@ -238,56 +180,12 @@ const Projects = () => {
                   Унікальний екологічний проєкт із висадження енергетичних верб
                   для відновлення довкілля та сталого розвитку.
                 </Paragraph>
-                <Text type="secondary">Сектор: Екологія та сталий розвиток</Text>
+
               </Card>
             </motion.div>
           </Col>
         </Row>
       </div>
-
-      <Title
-        level={2}
-        style={{ textAlign: "center", marginBottom: 48, marginTop: 50 }}
-      >
-        Минулих проєктів
-      </Title>
-      <Row gutter={[32, 32]}>
-        {pastProjects.map(({ id, title, description, images, sector }, index) => (
-          <Col xs={24} sm={12} md={8} key={id}>
-            <motion.div
-              custom={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInUp}
-            >
-              <Card
-                hoverable
-                onClick={() => history.push(`/event/${id}`)}
-                style={{
-                  borderRadius: 12,
-                  boxShadow:
-                    "0 8px 20px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06)",
-                  overflow: "hidden",
-                  transition: "transform 0.3s ease",
-                  minHeight: 380,
-                }}
-                cover={
-                  <img
-                    alt={title}
-                    src={`/img/svg/${images[0]}`}
-                    style={{ height: 220, objectFit: "cover" }}
-                  />
-                }
-                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
-                onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-              >
-                {renderCardMeta(title, description, sector)}
-              </Card>
-            </motion.div>
-          </Col>
-        ))}
-      </Row>
     </div>
   );
 };
