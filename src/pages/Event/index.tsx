@@ -10,7 +10,7 @@ const ImageWithSkeleton: React.FC<{ src: string; alt: string; style?: React.CSSP
   const [loaded, setLoaded] = useState(false);
   return (
     <>
-      {!loaded && <Skeleton.Image style={{ width: style?.width || '100%', height: style?.height || 100, borderRadius: style?.borderRadius || 0, marginBottom: 8 }} active />}
+      {!loaded && <Skeleton.Image style={{ width: style?.width || '100%', height: style?.height || 400, borderRadius: style?.borderRadius || 0, marginBottom: 8 }} active />}
       <Image
         src={src}
         alt={alt}

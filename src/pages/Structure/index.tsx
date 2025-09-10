@@ -77,8 +77,9 @@ const sectors: StructureItem[] = [
     image: "cult.png",
     description: "Реалізовує культурні та суспільні ініціативи.",
     minister: {
-      email: "sharm.lider.ua@gmail.com",
-    },
+        name: "Керівник сектору",
+        email: "sharm.lider.ua@gmail.com",
+      },
   },
   {
     id: "patriot",
@@ -87,8 +88,9 @@ const sectors: StructureItem[] = [
     image: "svs.png",
     description: "Організовує заходи військово-патріотичного спрямування.",
     minister: {
-      email: "sharm.lider.ua@gmail.com",
-    },
+        name: "Керівник сектору",
+        email: "sharm.lider.ua@gmail.com",
+      },
   },
   {
     id: "development",
@@ -97,8 +99,9 @@ const sectors: StructureItem[] = [
     image: "rozvt.png",
     description: "Відповідає за вдосконалення внутрішньої структури та підтримку інших секторів.",
     minister: {
-      email: "sharm.lider.ua@gmail.com",
-    },
+        name: "Керівник сектору",
+        email: "sharm.lider.ua@gmail.com",
+      },
   },
   {
     id: "info",
@@ -106,9 +109,10 @@ const sectors: StructureItem[] = [
     icon: icons.info,
     image: "inf.png",
     description: "Займається соцмережами та зовнішньою комунікацією.",
-    minister: {
-      email: "sharm.lider.ua@gmail.com",
-    },
+    minister:{
+        name: "Керівник сектору",
+        email: "sharm.lider.ua@gmail.com",
+      },
   },
   {
     id: "health-eco",
@@ -116,7 +120,9 @@ const sectors: StructureItem[] = [
     icon: icons.sport,
     image: "sport.png",
     description: "Організовує спортивні події, екопроєкти та ініціативи зі здорового способу життя.",
+
     minister: {
+      name: "Керівник сектору",
       email: "sharm.lider.ua@gmail.com",
     },
   },
@@ -127,6 +133,7 @@ const sectors: StructureItem[] = [
     image: "graphs.svg",
     description: "Розвиває підприємницькі навички та фінансову грамотність серед членів організації.",
     minister: {
+      name: 'Керівник сектору',
       email: "sharm.lider.ua@gmail.com",
     },
   },
