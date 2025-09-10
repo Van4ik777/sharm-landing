@@ -16,7 +16,7 @@ const icons = {
 };
 
 interface Person {
-  name: string;
+  name?: string;
   email?: string;
 }
 
@@ -77,7 +77,6 @@ const sectors: StructureItem[] = [
     image: "cult.png",
     description: "Реалізовує культурні та суспільні ініціативи.",
     minister: {
-      name: "Світлана Мироненко",
       email: "sharm.lider.ua@gmail.com",
     },
   },
@@ -88,7 +87,6 @@ const sectors: StructureItem[] = [
     image: "svs.png",
     description: "Організовує заходи військово-патріотичного спрямування.",
     minister: {
-      name: "Олег Гончар",
       email: "sharm.lider.ua@gmail.com",
     },
   },
@@ -99,7 +97,6 @@ const sectors: StructureItem[] = [
     image: "rozvt.png",
     description: "Відповідає за вдосконалення внутрішньої структури та підтримку інших секторів.",
     minister: {
-      name: "Оксана Левченко",
       email: "sharm.lider.ua@gmail.com",
     },
   },
@@ -110,7 +107,6 @@ const sectors: StructureItem[] = [
     image: "inf.png",
     description: "Займається соцмережами та зовнішньою комунікацією.",
     minister: {
-      name: "Дмитро Савченко",
       email: "sharm.lider.ua@gmail.com",
     },
   },
@@ -121,7 +117,6 @@ const sectors: StructureItem[] = [
     image: "sport.png",
     description: "Організовує спортивні події, екопроєкти та ініціативи зі здорового способу життя.",
     minister: {
-      name: "Анна Кравченко",
       email: "sharm.lider.ua@gmail.com",
     },
   },
@@ -132,7 +127,6 @@ const sectors: StructureItem[] = [
     image: "graphs.svg",
     description: "Розвиває підприємницькі навички та фінансову грамотність серед членів організації.",
     minister: {
-      name: "Валентин Коваленко",
       email: "sharm.lider.ua@gmail.com",
     },
   },
@@ -197,31 +191,15 @@ function Modal({
               lineHeight: 1.8,
             }}
           >
-            {minister && (
-              <>
-                <div>👤 Керівник сектору: {minister.name}</div>
-                {minister.email && (
-                  <div>
-                    ✉️{" "}
-                    <a style={{ color: "#5D3FD3" }} href={`mailto:${minister.email}`}>
-                      {minister.email}
-                    </a>
-                  </div>
-                )}
-              </>
+            {minister && minister.email && (
+              <div>
+                ✉️ <a style={{ color: "#5D3FD3" }} href={`mailto:${minister.email}`}>{minister.email}</a>
+              </div>
             )}
-            {contact && (
-              <>
-                <div>👤 {contact.name}</div>
-                {contact.email && (
-                  <div>
-                    ✉️{" "}
-                    <a style={{ color: "#5D3FD3" }} href={`mailto:${contact.email}`}>
-                      {contact.email}
-                    </a>
-                  </div>
-                )}
-              </>
+            {contact && contact.email && (
+              <div>
+                ✉️ <a style={{ color: "#5D3FD3" }} href={`mailto:${contact.email}`}>{contact.email}</a>
+              </div>
             )}
           </div>
         )}
@@ -306,9 +284,8 @@ export default function StructurePage() {
               <span style={{ fontSize: 36, marginRight: 12 }}>{sector.icon}</span>
               <div>
                 <div style={styles.nodeTitle}>{sector.title}</div>
-                {sector.minister && (
+                {sector.minister && sector.minister.email && (
                   <div style={{ fontSize: 14, color: "#5D3FD3", marginTop: 4 }}>
-                    Керівник сектору: {sector.minister.name} <br />
                     ✉️ <a style={{ color: "#5D3FD3" }} href={`mailto:${sector.minister.email}`}>{sector.minister.email}</a>
                   </div>
                 )}

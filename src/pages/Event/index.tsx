@@ -1,8 +1,26 @@
+import React, { useState } from "react";
+
 import { useParams, useHistory } from "react-router-dom";
-import { Typography, Image, Tag, Button } from "antd";
+import { Typography, Image, Tag, Button, Skeleton } from "antd";
 import { motion } from "framer-motion";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Projects } from "../../data/projects";
+// Компонент-обертка для Image с Skeleton
+const ImageWithSkeleton: React.FC<{ src: string; alt: string; style?: React.CSSProperties }> = ({ src, alt, style }) => {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <>
+      {!loaded && <Skeleton.Image style={{ width: style?.width || '100%', height: style?.height || 100, borderRadius: style?.borderRadius || 0, marginBottom: 8 }} active />}
+      <Image
+        src={src}
+        alt={alt}
+        style={{ ...style, display: loaded ? undefined : "none" }}
+        loading="eager"
+        onLoad={() => setLoaded(true)}
+      />
+    </>
+  );
+};
 
 const { Title, Paragraph } = Typography;
 
@@ -65,7 +83,7 @@ const Event = () => {
           {data.images.length === 3 ? (
             <>
               {/* Большое фото сверху */}
-              <Image
+              <ImageWithSkeleton
                 src={`/img/svg/${data.images[0]}`}
                 alt={`${data.title} - фото 1`}
                 style={{
@@ -74,7 +92,6 @@ const Event = () => {
                   objectFit: "cover",
                   borderRadius: 12,
                 }}
-                loading="eager"
               />
               {/* Нижний ряд из двух миниатюр */}
               <div
@@ -85,7 +102,7 @@ const Event = () => {
                 }}
               >
                 {[data.images[1], data.images[2]].map((img, i) => (
-                  <Image
+                  <ImageWithSkeleton
                     key={i}
                     src={`/img/svg/${img}`}
                     alt={`${data.title} - фото ${i + 2}`}
@@ -95,7 +112,6 @@ const Event = () => {
                       objectFit: "cover",
                       borderRadius: 12,
                     }}
-                    loading="eager"
                   />
                 ))}
               </div>
@@ -103,7 +119,7 @@ const Event = () => {
           ) : (
             // Для 1, 2, 4 фото рендерим сетку как раньше
             data.images.map((img, index) => (
-              <Image
+              <ImageWithSkeleton
                 key={index}
                 src={`/img/svg/${img}`}
                 alt={`${data.title} - фото ${index + 1}`}
@@ -118,7 +134,6 @@ const Event = () => {
                   objectFit: "cover",
                   borderRadius: 12,
                 }}
-                loading="eager"
               />
             ))
           )}
