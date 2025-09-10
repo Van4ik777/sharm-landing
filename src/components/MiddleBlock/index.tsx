@@ -64,9 +64,21 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                           />
                         </ImageContainer>
                         <ImageDescription>
-                          <h4>Минулий проєкт</h4>
                           <p>{featuredPastProject1.title}</p>
-                          <span>{featuredPastProject1.description}</span>
+                          <span
+                            style={{
+                              display: '-webkit-box',
+                              WebkitLineClamp: 4,
+                              WebkitBoxOrient: 'vertical',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis',
+                              whiteSpace: 'pre-line',
+                              minHeight: 72,
+                              maxHeight: 96,
+                            }}
+                          >
+                            {featuredPastProject1.description}
+                          </span>
                         </ImageDescription>
                       </ImageCard>
                     </Slide>
@@ -82,9 +94,21 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                           />
                         </ImageContainer>
                         <ImageDescription>
-                          <h4>Минулий проєкт</h4>
                           <p>{featuredPastProject2.title}</p>
-                          <span>{featuredPastProject2.description}</span>
+                          <span
+                            style={{
+                              display: '-webkit-box',
+                              WebkitLineClamp: 4,
+                              WebkitBoxOrient: 'vertical',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis',
+                              whiteSpace: 'pre-line',
+                              minHeight: 72,
+                              maxHeight: 96,
+                            }}
+                          >
+                            {featuredPastProject2.description}
+                          </span>
                         </ImageDescription>
                       </ImageCard>
                     </Slide>

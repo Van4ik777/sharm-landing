@@ -74,6 +74,7 @@ const Event = () => {
                   objectFit: "cover",
                   borderRadius: 12,
                 }}
+                loading="eager"
               />
               {/* Нижний ряд из двух миниатюр */}
               <div
@@ -94,6 +95,7 @@ const Event = () => {
                       objectFit: "cover",
                       borderRadius: 12,
                     }}
+                    loading="eager"
                   />
                 ))}
               </div>
@@ -116,6 +118,7 @@ const Event = () => {
                   objectFit: "cover",
                   borderRadius: 12,
                 }}
+                loading="eager"
               />
             ))
           )}
