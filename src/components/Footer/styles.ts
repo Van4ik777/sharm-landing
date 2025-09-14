@@ -30,12 +30,13 @@ export const NavLink = styled(Link)`
 `;
 
 export const Extra = styled("section")`
-  background: rgb(241, 242, 243);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   position: relative;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 2rem;
+  border-top: 1px solid #e2e8f0;
 `;
 
 export const LogoContainer = styled("div")`
@@ -91,18 +92,33 @@ export const FooterContainer = styled("div")`
   max-width: 510px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   align-items: center;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #5D3FD3 0%, #7D5FFF 100%);
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(93, 63, 211, 0.2);
+
     &:hover,
     &:active,
     &:focus {
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(93, 63, 211, 0.3);
+    }
+
+    svg {
+      filter: brightness(0) invert(1);
+      width: 20px;
+      height: 20px;
     }
   }
 
@@ -110,17 +126,6 @@ export const FooterContainer = styled("div")`
     width: auto;
     justify-content: center;
     margin-top: 1rem;
-  }
-
-  div {
-    cursor: pointer;
-    margin-right: 15px;
-    width: 25px;
-    height: 25px;
-
-    &:hover {
-      fill: rgb(255, 130, 92);
-    }
   }
 `;
 

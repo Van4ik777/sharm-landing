@@ -150,7 +150,7 @@ const Projects = () => {
                 cover={
                   <img
                     alt="Енергетична верба"
-                    src="/img/svg/verb_main.png"
+                    src="/img/svg/verba_logo.png"
                     style={{
                       height: 240,
                       objectFit: "cover",
