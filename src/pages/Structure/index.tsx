@@ -76,8 +76,8 @@ const sectors: StructureItem[] = [
     id: "culture",
     title: "Сектор Культури",
     icon: icons.culture,
-    image: "cult.png",
-    description: "Реалізовує культурні та суспільні ініціативи.",
+    image: "inf.png",
+    description: "Організовує творчі заходи, розвиває таланти та підтримує культурні ініціативи молоді.",
     minister: {
         name: "Керівник сектору",
       },
@@ -87,7 +87,7 @@ const sectors: StructureItem[] = [
     title: "Сектор Військового-Патріотичного Спрямування",
     icon: icons.patriot,
     image: "svs.png",
-    description: "Організовує заходи військово-патріотичного спрямування.",
+    description: "Формує патріотичний дух, популяризує знання з безпеки та національної оборони.",
     minister: {
         name: "Керівник сектору",
       },
@@ -97,7 +97,7 @@ const sectors: StructureItem[] = [
     title: "Сектор Внутрішьного Розвитку",
     icon: icons.development,
     image: "rozvt.png",
-    description: "Відповідає за вдосконалення внутрішньої структури та підтримку інших секторів.",
+    description: "Відповідає за командну атмосферу, мотивацію та ефективність роботи членів організації.",
     minister: {
         name: "Керівник сектору",
       },
@@ -106,29 +106,18 @@ const sectors: StructureItem[] = [
     id: "info",
     title: "Сектор Інформації",
     icon: icons.info,
-    image: "inf.png",
-    description: "Займається соцмережами та зовнішньою комунікацією.",
+    image: "sport.png",
+    description: "Займається комунікацією, медіа та соцмережами, щоб усі знали про події й можливості ШАРМу.",
     minister:{
         name: "Керівник сектору",
       },
   },
   {
-    id: "health-eco",
-    title: "Сектор Здоров’я та Екології",
-    icon: icons.sport,
-    image: "sport.png",
-    description: "Організовує спортивні події, екопроєкти та ініціативи зі здорового способу життя.",
-
-    minister: {
-      name: "Керівник сектору",
-    },
-  },
-  {
     id: "finance",
     title: "Сектор Підприємницької Діяльності та Фінансової Грамотності",
     icon: icons.finance,
-    image: "graphs.svg",
-    description: "Розвиває підприємницькі навички та фінансову грамотність серед членів організації.",
+    image: "cult.png",
+    description: "Навчає молодь розумно керувати грошима, розвиває підприємницьке мислення.",
     minister: {
       name: 'Керівник сектору',
     },
@@ -138,7 +127,7 @@ const sectors: StructureItem[] = [
     title: "Сектор Спонсорства",
     icon: icons.sponsorship,
     image: "laugh_sponsor.png",
-    description: "Відповідає за пошук, залучення та підтримку спонсорів для реалізації проєктів та ініціатив організації.",
+    description: "Шукає партнерів і ресурси для реалізації проєктів організації.",
     minister: {
       name: 'Керівник сектору',
     },
@@ -148,9 +137,20 @@ const sectors: StructureItem[] = [
     title: "Сектор Зовнішнього Розвитку",
     icon: icons.externalinternal,
     image: "rozvt.png",
-    description: "Займається розвитком зовнішніх зв'язків організації та вдосконаленням внутрішніх процесів.",
+    description: "Налагоджує співпрацю з іншими організаціями та поширює діяльність ШАРМу за межі району.",
     minister: {
       name: 'Керівник сектору',
+    },
+  },
+  {
+    id: "health-eco",
+    title: "Сектор Здоров’я та Екології",
+    icon: icons.sport,
+    image: "sport.png",
+    description: "Популяризує здоровий спосіб життя та дбає про екологічну свідомість.",
+
+    minister: {
+      name: "Керівник сектору",
     },
   },
 ];
