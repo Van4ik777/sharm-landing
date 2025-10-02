@@ -86,7 +86,7 @@ const sectors: StructureItem[] = [
     id: "patriot",
     title: "Сектор Військово-Патріотичного Спрямування",
     icon: icons.patriot,
-    image: "svs.png",
+    image: "свс.png",
     description: "Формує патріотичний дух, популяризує знання з безпеки та національної оборони.",
     minister: {
         name: "Керівник сектору",
@@ -126,7 +126,7 @@ const sectors: StructureItem[] = [
     id: "sponsorship",
     title: "Сектор Спонсорства",
     icon: icons.sponsorship,
-    image: "laugh_sponsor.png",
+    image: "спонсортсво.png",
     description: "Шукає партнерів і ресурси для реалізації проєктів організації.",
     minister: {
       name: 'Керівник сектору',
@@ -136,7 +136,7 @@ const sectors: StructureItem[] = [
     id: "externalinternal",
     title: "Сектор Зовнішнього Розвитку",
     icon: icons.externalinternal,
-    image: "зовнішній.png",
+    image: "зовнішний.png",
     description: "Налагоджує співпрацю з іншими організаціями та поширює діяльність ШАРМу за межі району.",
     minister: {
       name: 'Керівник сектору',
@@ -185,7 +185,7 @@ function Modal({
         </button>
         {image && (
           <img
-            src={`/img/${image.includes('культура') || image.includes('екологія') || image.includes('внутрішній') || image.includes('зовнішній') || image.includes('інформація') ? 'sectors' : 'svg'}/${image}`}
+            src={`/img/${image.includes('культура') || image.includes('екологія') || image.includes('внутрішній') || image.includes('зовнішній') || image.includes('інформація') || image.includes('свс') || image.includes('спонсортсво') ? 'sectors' : 'svg'}/${image}`}
             alt={title}
             loading="eager"
             style={{
