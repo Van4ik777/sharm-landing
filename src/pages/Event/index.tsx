@@ -31,17 +31,15 @@ const Event = () => {
   const history = useHistory();
   const data = Projects.find((project) => project.id === Number(id));
   const [imagesLoaded, setImagesLoaded] = useState(Array(data?.images?.length || 0).fill(false));
-  // Progressive skeleton timeout: show gallery after 0.2s even if not all images loaded
+  // Progressive skeleton timeout: show gallery immediately if images are cached
   const [showGallery, setShowGallery] = useState(false);
   React.useEffect(() => {
     if (imagesLoaded.every(Boolean)) {
       setShowGallery(true);
       return;
     }
-    const timeout = setTimeout(() => {
-      setShowGallery(true);
-    }, 100);
-    return () => clearTimeout(timeout);
+    // Убираем задержку - показываем галерею сразу
+    setShowGallery(true);
   }, [imagesLoaded]);
 
 

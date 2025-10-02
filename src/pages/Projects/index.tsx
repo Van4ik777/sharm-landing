@@ -112,6 +112,7 @@ const Projects = () => {
                       src={`/img/svg/${images[0]}`}
                       style={{ height: 220, objectFit: "cover" }}
                       preview={true}
+                      loading="eager"
                     />
                   ) : null
                 }

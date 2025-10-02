@@ -61,6 +61,7 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                           <img
                             src={`/img/svg/${featuredPastProject1.images[0]}`}
                             alt={featuredPastProject1.title}
+                            loading="eager"
                           />
                         </ImageContainer>
                         <ImageDescription>
@@ -91,6 +92,7 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                           <img
                             src={`/img/svg/${featuredPastProject2.images[0]}`}
                             alt={featuredPastProject2.title}
+                            loading="eager"
                           />
                         </ImageContainer>
                         <ImageDescription>

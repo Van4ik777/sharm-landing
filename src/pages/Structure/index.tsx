@@ -76,7 +76,7 @@ const sectors: StructureItem[] = [
     id: "culture",
     title: "Сектор Культури",
     icon: icons.culture,
-    image: "inf.png",
+    image: "культура.png",
     description: "Організовує творчі заходи, розвиває таланти та підтримує культурні ініціативи молоді.",
     minister: {
         name: "Керівник сектору",
@@ -96,7 +96,7 @@ const sectors: StructureItem[] = [
     id: "development",
     title: "Сектор Внутрішьного Розвитку",
     icon: icons.development,
-    image: "rozvt.png",
+    image: "внутрішній.png",
     description: "Відповідає за командну атмосферу, мотивацію та ефективність роботи членів організації.",
     minister: {
         name: "Керівник сектору",
@@ -106,7 +106,7 @@ const sectors: StructureItem[] = [
     id: "info",
     title: "Сектор Інформації",
     icon: icons.info,
-    image: "sport.png",
+    image: "інформація.png",
     description: "Займається комунікацією, медіа та соцмережами, щоб усі знали про події й можливості ШАРМу.",
     minister:{
         name: "Керівник сектору",
@@ -136,7 +136,7 @@ const sectors: StructureItem[] = [
     id: "externalinternal",
     title: "Сектор Зовнішнього Розвитку",
     icon: icons.externalinternal,
-    image: "rozvt.png",
+    image: "зовнішній.png",
     description: "Налагоджує співпрацю з іншими організаціями та поширює діяльність ШАРМу за межі району.",
     minister: {
       name: 'Керівник сектору',
@@ -144,9 +144,9 @@ const sectors: StructureItem[] = [
   },
   {
     id: "health-eco",
-    title: "Сектор Здоров’я та Екології",
+    title: "Сектор Здоров'я та Екології",
     icon: icons.sport,
-    image: "sport.png",
+    image: "екологія.png",
     description: "Популяризує здоровий спосіб життя та дбає про екологічну свідомість.",
 
     minister: {
@@ -185,8 +185,9 @@ function Modal({
         </button>
         {image && (
           <img
-            src={`/img/svg/${image}`}
+            src={`/img/${image.includes('культура') || image.includes('екологія') || image.includes('внутрішній') || image.includes('зовнішній') || image.includes('інформація') ? 'sectors' : 'svg'}/${image}`}
             alt={title}
+            loading="eager"
             style={{
               width: "90%",
               marginLeft: "5%",
