@@ -364,7 +364,7 @@ const styles = {
     userSelect: "none" as const,
     padding: "10px 14px",
     borderRadius: 8,
-    transition: "all 0.25s ease",
+    transition: "all 0.5s ease",
   },
   nodeTitle: {
     fontSize: 18,

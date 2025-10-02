@@ -55,7 +55,7 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
               <ImagesWrapper>
                 <Row gutter={[32, 32]} justify="center">
                   <Col xs={24} sm={12} md={12} lg={10}>
-                    <Slide direction="left" triggerOnce delay={200}>
+                    <Slide direction="left" triggerOnce delay={400}>
                       <ImageCard onClick={() => handleProjectClick(featuredPastProject1.id)}>
                         <ImageContainer>
                           <img
@@ -86,7 +86,7 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                   </Col>
                   
                   <Col xs={24} sm={12} md={12} lg={10}>
-                    <Slide direction="right" triggerOnce delay={400}>
+                    <Slide direction="right" triggerOnce delay={600}>
                       <ImageCard onClick={() => handleProjectClick(featuredPastProject2.id)}>
                         <ImageContainer>
                           <img

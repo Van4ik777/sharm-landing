@@ -12,7 +12,7 @@ export const StyledButton = styled("button")<{ color?: string }>`
   cursor: pointer;
   margin-top: 0.625rem;
   max-width: 180px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.6s ease-in-out;
   box-shadow: 0 16px 30px rgb(23 31 114 / 20%);
 
   &:hover,

@@ -75,7 +75,7 @@ const Event = () => {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
         style={{
           maxWidth: 1100,
           margin: "140px auto",

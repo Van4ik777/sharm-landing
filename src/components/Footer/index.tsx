@@ -95,7 +95,7 @@ const Footer = ({ t }: { t: TFunction }) => {
                       style={{ 
                         color: "#5D3FD3", 
                         textDecoration: "none",
-                        transition: "color 0.3s ease"
+                        transition: "color 0.6s ease"
                       }}
                       onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.color = "#7D5FFF"}
                       onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.color = "#5D3FD3"}
@@ -119,7 +119,7 @@ const Footer = ({ t }: { t: TFunction }) => {
                       style={{ 
                         color: "#5D3FD3", 
                         textDecoration: "none",
-                        transition: "color 0.3s ease"
+                        transition: "color 0.6s ease"
                       }}
                       onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.color = "#7D5FFF"}
                       onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.color = "#5D3FD3"}

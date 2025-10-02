@@ -18,7 +18,7 @@ export const HeaderSection = styled("header")`
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(180%) blur(20px);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: background 0.3s ease;
+  transition: background 0.6s ease;
   padding-bottom: 0px; 
 `;
 
@@ -79,7 +79,7 @@ export const Menu = styled("h5")`
 export const CustomNavLinkSmall = styled(NavLink)`
   font-size: 1.2rem;
   color: #18216d;
-  transition: color 0.2s ease-in;
+  transition: color 0.4s ease-in;
   margin: 0.5rem 2rem;
 
   @media only screen and (max-width: 768px) {
@@ -103,7 +103,7 @@ export const Outline = styled(MenuOutlined)`
 
 export const Span = styled("span")`
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.6s ease-in-out;
   font-size: 1.4rem;
   color: rgb(14, 14, 14);
   &:hover,

@@ -31,7 +31,7 @@ export const ImagesWrapper = styled("div")`
 
 export const ImageCard = styled("div")`
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
   border-radius: 16px;
   overflow: hidden;
   background: white;
@@ -53,7 +53,7 @@ export const ImageContainer = styled("div")`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
   }
 
   ${ImageCard}:hover & img {

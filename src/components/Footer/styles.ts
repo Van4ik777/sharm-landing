@@ -20,7 +20,7 @@ export const NavLink = styled(Link)`
   display: block;
   font-size: 1rem;
   margin-bottom: 0.625rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   &:hover,
   &:active,
@@ -54,12 +54,12 @@ export const Large = styled(Link)`
   font-size: 16px;
   color: #000;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
   text-transform: capitalize;
   line-height: 24px;
   display: block;
   margin-bottom: 0.625rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.6s ease-in-out;
   max-width: max-content;
 
   &:hover {
@@ -75,7 +75,7 @@ export const Chat = styled("p")`
   border-bottom: 1px solid #18216d;
   cursor: pointer;
   margin-top: 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.6s ease-in-out;
 
   &:hover {
     border-bottom: 1px solid rgb(255, 130, 92);
@@ -95,7 +95,7 @@ export const FooterContainer = styled("div")`
   justify-content: center;
   text-align: center;
   align-items: center;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.6s ease-in-out;
 
   a {
     display: flex;
@@ -105,7 +105,7 @@ export const FooterContainer = styled("div")`
     height: 45px;
     background: linear-gradient(135deg, #5D3FD3 0%, #7D5FFF 100%);
     border-radius: 50%;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.6s ease-in-out;
     box-shadow: 0 4px 12px rgba(93, 63, 211, 0.2);
 
     &:hover,
@@ -155,7 +155,7 @@ export const Label = styled("label")`
 
 export const LanguageSwitch = styled("div")`
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
   &:hover,
   &:active,

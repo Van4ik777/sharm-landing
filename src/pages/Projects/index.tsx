@@ -11,8 +11,8 @@ const fadeInUp = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.1,
-      duration: 0.6,
+      delay: i * 0.2,
+      duration: 1,
       ease: easeInOut,
     },
   }),
@@ -102,7 +102,7 @@ const Projects = () => {
                   flexDirection: "column",
                   justifyContent: "space-between",
                   height: "100%",
-                  transition: "transform 0.3s ease",
+                  transition: "transform 0.6s ease",
                 }}
                 onClick={() => history.push(`/event/${id}`)}
                 cover={
