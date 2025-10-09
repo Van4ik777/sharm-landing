@@ -79,7 +79,7 @@ const sectors: StructureItem[] = [
     image: "культура.png",
     description: "Організовує творчі заходи, розвиває таланти та підтримує культурні ініціативи молоді.",
     minister: {
-        name: "Керівник сектору",
+        name: "Філюріна Варвара - керівник сектору",
       },
   },
   {
@@ -89,7 +89,7 @@ const sectors: StructureItem[] = [
     image: "свс.png",
     description: "Формує патріотичний дух, популяризує знання з безпеки та національної оборони.",
     minister: {
-        name: "Керівник сектору",
+        name: "Шевченко Валерія - керівник сектору",
       },
   },
   {
@@ -109,7 +109,7 @@ const sectors: StructureItem[] = [
     image: "інформація.png",
     description: "Займається комунікацією, медіа та соцмережами, щоб усі знали про події й можливості ШАРМу.",
     minister:{
-        name: "Керівник сектору",
+        name: "Щербина Соломія - керівниця сектору",
       },
   },
   {
@@ -119,7 +119,7 @@ const sectors: StructureItem[] = [
     image: "cult.png",
     description: "Навчає молодь розумно керувати грошима, розвиває підприємницьке мислення.",
     minister: {
-      name: 'Керівник сектору',
+      name: 'Керівник сектору ',
     },
   },
   {
@@ -129,7 +129,7 @@ const sectors: StructureItem[] = [
     image: "спонсортсво.png",
     description: "Шукає партнерів і ресурси для реалізації проєктів організації.",
     minister: {
-      name: 'Керівник сектору',
+      name: 'Грищенко Маргарита - керівниця сектору',
     },
   },
   {
@@ -139,7 +139,7 @@ const sectors: StructureItem[] = [
     image: "зовнішний.png",
     description: "Налагоджує співпрацю з іншими організаціями та поширює діяльність ШАРМу за межі району.",
     minister: {
-      name: 'Керівник сектору',
+      name: 'Вакуленко Софія - керівниця сектору',
     },
   },
   {
@@ -150,7 +150,7 @@ const sectors: StructureItem[] = [
     description: "Популяризує здоровий спосіб життя та дбає про екологічну свідомість.",
 
     minister: {
-      name: "Керівник сектору",
+      name: "Григоренко Аріна - керівник сектору",
     },
   },
 ];
@@ -267,7 +267,7 @@ export default function StructurePage() {
       </h1>
 
       <section>
-        <h3 style={{ color: "#7D5FFF", marginBottom: 10, fontSize: 32 }}>Органи ШАРМу</h3>
+        <h3 style={{ color: "#7D5FFF", marginBottom: 10, fontSize: 32 }}>президія ШАРМу</h3>
         <div style={styles.treeContainer}>
           {organs.map((org) => (
             <div

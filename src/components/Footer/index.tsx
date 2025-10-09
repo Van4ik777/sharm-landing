@@ -2,6 +2,7 @@ import { Row, Col } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
 import { SvgIcon } from "../../common/SvgIcon";
 import Container from "../../common/Container";
+import { useState } from "react";
 
 import {
   FooterSection,
@@ -19,6 +20,19 @@ interface SocialLinkProps {
 }
 
 const Footer = ({ t }: { t: TFunction }) => {
+  const currentYear = new Date().getFullYear();
+  const [showNotification, setShowNotification] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText('sharm.lider.ua@gmail.com');
+      setShowNotification(true);
+      setTimeout(() => setShowNotification(false), 3000);
+      window.location.href = `mailto:sharm.lider.ua@gmail.com`;
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  };
 
   const SocialLink = ({ href, src }: SocialLinkProps) => {
     return (
@@ -36,6 +50,45 @@ const Footer = ({ t }: { t: TFunction }) => {
 
   return (
     <>
+      {/* Красивое уведомление */}
+      {showNotification && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          backgroundColor: '#4CAF50',
+          color: 'white',
+          padding: '16px 24px',
+          borderRadius: '12px',
+          boxShadow: '0 8px 32px rgba(76, 175, 80, 0.3)',
+          zIndex: 9999,
+          fontSize: '16px',
+          fontWeight: '600',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          animation: 'slideIn 0.3s ease-out',
+          border: '1px solid rgba(255, 255, 255, 0.2)'
+        }}>
+          <span style={{ fontSize: '20px' }}>✅</span>
+          <span>Email скопійовано в буфер обміну!</span>
+        </div>
+      )}
+      
+      <style>
+        {`
+          @keyframes slideIn {
+            from {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+            to {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+        `}
+      </style>
       <Extra>
         <Container border={true}>
           <Row
@@ -90,42 +143,26 @@ const Footer = ({ t }: { t: TFunction }) => {
                     color: "#666"
                   }}>
                     <span style={{ fontSize: "16px" }}>📧</span>
-                    <a 
-                      href="mailto:sharm.lider.ua@gmail.com" 
+                    <span 
+                      onClick={copyToClipboard}
                       style={{ 
                         color: "#5D3FD3", 
-                        textDecoration: "none",
-                        transition: "color 0.6s ease"
+                        cursor: "pointer",
+                        transition: "color 0.6s ease",
+                        textDecoration: "underline",
+                        textDecorationColor: "transparent"
                       }}
-                      onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.color = "#7D5FFF"}
-                      onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.color = "#5D3FD3"}
+                      onMouseEnter={(e) => {
+                        (e.target as HTMLSpanElement).style.color = "#7D5FFF";
+                        (e.target as HTMLSpanElement).style.textDecorationColor = "#7D5FFF";
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.target as HTMLSpanElement).style.color = "#5D3FD3";
+                        (e.target as HTMLSpanElement).style.textDecorationColor = "transparent";
+                      }}
                     >
                       sharm.lider.ua@gmail.com
-                    </a>
-                  </div>
-                  
-                  <div style={{ 
-                    display: "flex", 
-                    alignItems: "center", 
-                    gap: "0.5rem",
-                    fontSize: "14px", 
-                    color: "#666"
-                  }}>
-                    <span style={{ fontSize: "16px" }}>📱</span>
-                    <a 
-                      href="https://www.instagram.com/sharm.leader/" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ 
-                        color: "#5D3FD3", 
-                        textDecoration: "none",
-                        transition: "color 0.6s ease"
-                      }}
-                      onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.color = "#7D5FFF"}
-                      onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.color = "#5D3FD3"}
-                    >
-                      @sharm.leader
-                    </a>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -136,7 +173,6 @@ const Footer = ({ t }: { t: TFunction }) => {
                 <h4 style={{ 
                   fontSize: "18px", 
                   fontWeight: "600", 
-                  color: "#5D3FD3", 
                   marginBottom: "1rem",
                   margin: 0
                 }}>
@@ -150,6 +186,14 @@ const Footer = ({ t }: { t: TFunction }) => {
                   <SocialLink
                     href="https://www.instagram.com/sharm.leader/"
                     src="instagram.svg"
+                  />
+                  <SocialLink
+                    href="https://www.tiktok.com/@sharm.leader_/"
+                    src="tiktok.svg"
+                  />
+                  <SocialLink
+                    href="https://www.facebook.com/sharm.leader"
+                    src="facebook.svg"
                   />
                 </FooterContainer>
               </div>
@@ -166,7 +210,7 @@ const Footer = ({ t }: { t: TFunction }) => {
               color: "#9CA3AF",
               marginBottom: "0.5rem"
             }}>
-              © 2024 ШАРМ. Всі права захищені.
+              © {currentYear} ШАРМ. Всі права захищені.
             </div>
             <div style={{ 
               fontSize: "12px", 
