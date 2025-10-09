@@ -95,7 +95,6 @@ const Event = () => {
             marginBottom: "1rem",
             fontSize: 16,
             color: "#000",
-            zIndex: 1000,
             position: "relative"
           }}
         >

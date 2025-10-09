@@ -192,7 +192,7 @@ const Footer = ({ t }: { t: TFunction }) => {
                     src="tiktok.svg"
                   />
                   <SocialLink
-                    href="https://www.facebook.com/sharm.leader"
+                    href="https://www.facebook.com/profile.php?id=100063297334293"
                     src="facebook.svg"
                   />
                 </FooterContainer>

@@ -119,7 +119,7 @@ const sectors: StructureItem[] = [
     image: "cult.png",
     description: "Навчає молодь розумно керувати грошима, розвиває підприємницьке мислення.",
     minister: {
-      name: 'Керівник сектору ',
+      name: 'Козаченко Артем - керівник сектору',
     },
   },
   {
@@ -365,11 +365,6 @@ export default function StructurePage() {
               <span style={{ fontSize: 36, marginRight: 12 }}>{sector.icon}</span>
               <div>
                 <div style={styles.nodeTitle}>{sector.title}</div>
-                {sector.minister && sector.minister.name && (
-                  <div style={{ fontSize: 14, color: "#5D3FD3", marginTop: 4 }}>
-                    👤 {sector.minister.name}
-                  </div>
-                )}
               </div>
             </div>
           ))}
