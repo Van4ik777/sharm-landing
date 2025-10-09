@@ -99,7 +99,7 @@ const sectors: StructureItem[] = [
     image: "внутрішній.png",
     description: "Відповідає за командну атмосферу, мотивацію та ефективність роботи членів організації.",
     minister: {
-        name: "Керівник сектору",
+        name: "Никифорук Тетяна - керівник сектору",
       },
   },
   {
@@ -165,6 +165,9 @@ function Modal({
   contact,
   image,
   isMobile,
+  isLoading,
+  onImageLoad,
+  onImageError,
 }: {
   visible: boolean;
   onClose: () => void;
@@ -174,6 +177,9 @@ function Modal({
   contact?: Person;
   image?: string;
   isMobile: boolean;
+  isLoading?: boolean;
+  onImageLoad?: (imageName: string) => void;
+  onImageError?: (imageName: string) => void;
 }) {
   if (!visible) return null;
 
@@ -184,20 +190,46 @@ function Modal({
           ×
         </button>
         {image && (
-          <img
-            src={`/img/${image.includes('культура') || image.includes('екологія') || image.includes('внутрішній') || image.includes('зовнішній') || image.includes('інформація') || image.includes('свс') || image.includes('спонсортсво') ? 'sectors' : 'svg'}/${image}`}
-            alt={title}
-            loading="eager"
-            style={{
-              width: "90%",
-              marginLeft: "5%",
-              maxHeight: 300, // выше
-              objectFit: "cover",
-              objectPosition: isMobile ? "center" : (image === "inf.png" ? "center -100px" : "center"),
-              borderRadius: 8,
-              marginBottom: 20,
-            }}
-          />
+          <div style={{ position: 'relative', width: "90%", marginLeft: "5%", marginBottom: 20 }}>
+            {/* Скелетон загрузки */}
+            {isLoading && (
+              <div style={{
+                width: "100%",
+                height: 300,
+                backgroundColor: "#f0f0f0",
+                borderRadius: 8,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                ...styles.skeleton
+              }}>
+                <div style={{
+                  fontSize: "24px",
+                  color: "#ccc"
+                }}>
+                  📷
+                </div>
+              </div>
+            )}
+            
+            {/* Изображение */}
+            <img
+              src={`/img/${image.includes('культура') || image.includes('екологія') || image.includes('внутрішній') || image.includes('зовнішній') || image.includes('інформація') || image.includes('свс') || image.includes('спонсортсво') ? 'sectors' : 'svg'}/${image}`}
+              alt={title}
+              loading="eager"
+              onLoad={() => onImageLoad?.(image)}
+              onError={() => onImageError?.(image)}
+              style={{
+                width: "100%",
+                maxHeight: 300,
+                objectFit: "cover",
+                objectPosition: isMobile ? "center" : (image === "inf.png" ? "center -100px" : "center"),
+                borderRadius: 8,
+                display: isLoading ? "none" : "block",
+                transition: "opacity 0.3s ease-in-out"
+              }}
+            />
+          </div>
         )}
         <h2 style={{ color: "#5D3FD3", marginBottom: 12, fontSize: 34 }}>{title}</h2>
         {content && <p style={{ fontSize: 15, color: "#444", lineHeight: 1.6 }}>{content}</p>}
@@ -245,6 +277,7 @@ function Modal({
 export default function StructurePage() {
   const [modalData, setModalData] = useState<StructureItem | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [imageLoading, setImageLoading] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     const checkMobile = () => {
@@ -257,8 +290,22 @@ export default function StructurePage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const openModal = (item: StructureItem) => setModalData(item);
+  const openModal = (item: StructureItem) => {
+    setModalData(item);
+    if (item.image) {
+      setImageLoading(prev => ({ ...prev, [item.image!]: true }));
+    }
+  };
+  
   const closeModal = () => setModalData(null);
+  
+  const handleImageLoad = (imageName: string) => {
+    setImageLoading(prev => ({ ...prev, [imageName]: false }));
+  };
+  
+  const handleImageError = (imageName: string) => {
+    setImageLoading(prev => ({ ...prev, [imageName]: false }));
+  };
 
   return (
     <div style={styles.container}>
@@ -318,9 +365,9 @@ export default function StructurePage() {
               <span style={{ fontSize: 36, marginRight: 12 }}>{sector.icon}</span>
               <div>
                 <div style={styles.nodeTitle}>{sector.title}</div>
-                {sector.minister && sector.minister.email && (
+                {sector.minister && sector.minister.name && (
                   <div style={{ fontSize: 14, color: "#5D3FD3", marginTop: 4 }}>
-                    ✉️ <a style={{ color: "#5D3FD3" }} href={`mailto:${sector.minister.email}`}>{sector.minister.email}</a>
+                    👤 {sector.minister.name}
                   </div>
                 )}
               </div>
@@ -338,6 +385,9 @@ export default function StructurePage() {
         contact={modalData?.contact}
         image={modalData?.image}
         isMobile={isMobile}
+        isLoading={modalData?.image ? imageLoading[modalData.image] : false}
+        onImageLoad={handleImageLoad}
+        onImageError={handleImageError}
       />
     </div>
   );
@@ -401,4 +451,32 @@ const styles = {
     color: "#5D3FD3",
     lineHeight: 1,
   },
+  skeleton: {
+    background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
+    backgroundSize: "200% 100%",
+    animation: "shimmer 1.5s infinite",
+  },
 };
+
+// Добавляем CSS анимации
+const styleSheet = document.createElement("style");
+styleSheet.textContent = `
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+`;
+document.head.appendChild(styleSheet);
