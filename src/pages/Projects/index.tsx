@@ -88,7 +88,7 @@ const Projects = () => {
           // После первых 3 проектов добавляем Вербу
           if (index === 3) {
             cards.push(
-              <Col xs={24} sm={{ span: 20, offset: 2 }} md={{ span: 16, offset: 4 }} key="verb-special">
+              <Col xs={24} sm={12} md={{ span: 16, offset: 4 }} key="verb-special">
                 <motion.div
                   custom={index}
                   initial="hidden"
