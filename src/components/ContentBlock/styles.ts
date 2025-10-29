@@ -11,7 +11,7 @@ export const ContentSection = styled("section")`
 
 export const Content = styled("p")`
   margin: 1.5rem 0 2rem 0;
-  font-size: 18px;
+  font-size: 20px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.6;

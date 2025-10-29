@@ -48,7 +48,6 @@ const ContentBlock = ({
 
   return (
     <ContentSection>
-      <div style={{marginTop: "50px"}}>
       <Fade direction={direction} triggerOnce>
         <StyledRow
           justify="space-between"
@@ -121,7 +120,6 @@ const ContentBlock = ({
           </Col>
         </StyledRow>
       </Fade>
-      </div>
     </ContentSection>
   );
 };

@@ -56,8 +56,7 @@ export const Styles = createGlobalStyle`
     h2,
     h3,
     h4,
-    h5,
-    h6 {
+    h5 {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(101, 32, 212); 
         font-size: 56px;
@@ -69,6 +68,17 @@ export const Styles = createGlobalStyle`
 
         @media only screen and (max-width: 414px) {
             font-size: 32px;
+        }
+    }
+
+    h6 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(101, 32, 212);
+        font-size: 44px;
+        line-height: 1.18;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 28px;
         }
     }
 
