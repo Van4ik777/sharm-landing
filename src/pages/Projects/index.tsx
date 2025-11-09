@@ -19,7 +19,7 @@ const fadeInUp = {
 };
 
 const { Meta } = Card;
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 
 

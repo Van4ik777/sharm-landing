@@ -67,8 +67,6 @@ const Event = () => {
 
   if (!data) return <div>Проєкт не знайдено</div>;
 
-  const isPast = Projects.some((project) => project.id === data.id);
-
   // Состояние загрузки всех картинок
 
   return (
