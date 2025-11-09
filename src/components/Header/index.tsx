@@ -12,7 +12,6 @@ import {
   Label,
   Outline,
   Span,
-  BottomLine,
 } from "./styles";
 import LogoText from "../../common/SvgIcon/LogoText";
 import { useHistory } from "react-router-dom";

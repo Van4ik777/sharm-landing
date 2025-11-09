@@ -5,13 +5,8 @@ import Container from "../../common/Container";
 import { useState } from "react";
 
 import {
-  FooterSection,
-  NavLink,
   Extra,
-  LogoContainer,
-  Para,
   FooterContainer,
-  Language,
 } from "./styles";
 
 interface SocialLinkProps {
