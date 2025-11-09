@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Row, Col, Button } from "antd";
+import { Typography, Row, Col } from "antd";
 import { motion, easeInOut } from "framer-motion";
 
 const { Title, Paragraph } = Typography;
