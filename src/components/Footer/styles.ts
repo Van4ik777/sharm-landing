@@ -127,6 +127,34 @@ export const FooterContainer = styled("div")`
     justify-content: center;
     margin-top: 1rem;
   }
+  
+  @media screen and (min-width: 769px) {
+    a {
+      background: transparent;
+      box-shadow: none;
+      border: 2px solid #000;
+      
+      &:hover,
+      &:active,
+      &:focus {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      svg {
+        filter: brightness(0);
+      }
+    }
+  }
+  
+  a {
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  a svg {
+    filter: brightness(0);
+  }
 `;
 
 export const Language = styled("h4")`

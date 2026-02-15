@@ -70,6 +70,34 @@ const Footer = ({ t }: { t: TFunction }) => {
         </div>
       )}
       
+      {/* Закрепленные социальные сети для пк версии */}
+      <div style={{
+        position: 'fixed',
+        bottom: '120px',
+        right: '20px',
+        zIndex: 999,
+        display: 'none'
+      }} className="social-networks-fixed">
+        <FooterContainer style={{ 
+          justifyContent: "center", 
+          gap: "1rem",
+          flexDirection: "column"
+        }}>
+          <SocialLink
+            href="https://www.instagram.com/sharm.leader/"
+            src="instagram.svg"
+          />
+          <SocialLink
+            href="https://www.tiktok.com/@sharm.leader_/"
+            src="tiktok.svg"
+          />
+          <SocialLink
+            href="https://www.facebook.com/profile.php?id=100063297334293"
+            src="facebook.svg"
+          />
+        </FooterContainer>
+      </div>
+      
       <style>
         {`
           @keyframes slideIn {
@@ -82,9 +110,26 @@ const Footer = ({ t }: { t: TFunction }) => {
               opacity: 1;
             }
           }
+          
+          @media screen and (min-width: 769px) {
+            .social-networks-fixed {
+              display: block !important;
+            }
+          }
         `}
       </style>
-      <Extra>
+      <Extra style={{
+        display: 'none'
+      }} className="footer-upper">
+        <style>
+          {`
+            @media screen and (max-width: 768px) {
+              .footer-upper {
+                display: none !important;
+              }
+            }
+          `}
+        </style>
         <Container border={true}>
           <Row
             justify="space-between"
@@ -163,36 +208,7 @@ const Footer = ({ t }: { t: TFunction }) => {
               </div>
             </Col>
             
-            <Col xs={24} sm={8} style={{ textAlign: "center" }}>
-              <div style={{ marginBottom: "1.5rem" }}>
-                <h4 style={{ 
-                  fontSize: "18px", 
-                  fontWeight: "600", 
-                  marginBottom: "1rem",
-                  margin: 0
-                }}>
-                  Соціальні мережі
-                </h4>
-                <FooterContainer style={{ 
-                  justifyContent: "center", 
-                  gap: "1.5rem",
-                  marginTop: "1rem"
-                }}>
-                  <SocialLink
-                    href="https://www.instagram.com/sharm.leader/"
-                    src="instagram.svg"
-                  />
-                  <SocialLink
-                    href="https://www.tiktok.com/@sharm.leader_/"
-                    src="tiktok.svg"
-                  />
-                  <SocialLink
-                    href="https://www.facebook.com/profile.php?id=100063297334293"
-                    src="facebook.svg"
-                  />
-                </FooterContainer>
-              </div>
-            </Col>
+
           </Row>
           
           <div style={{
@@ -215,6 +231,40 @@ const Footer = ({ t }: { t: TFunction }) => {
             </div>
           </div>
         </Container>
+      </Extra>
+      
+      <Extra style={{
+        padding: "1rem",
+        marginBottom: 0
+      }} className="footer-bottom-only">
+        <style>
+          {`
+            @media screen and (max-width: 768px) {
+              .footer-bottom-only {
+                padding: "4.375rem" !important;
+              }
+            }
+          `}
+        </style>
+        <div style={{
+          textAlign: "center",
+          position: "relative",
+          zIndex: 10
+        }}>
+          <div style={{ 
+            fontSize: "14px", 
+            color: "#9CA3AF",
+            marginBottom: "0.5rem"
+          }}>
+            © {currentYear} ШАРМ. Всі права захищені.
+          </div>
+          <div style={{ 
+            fontSize: "12px", 
+            color: "#D1D5DB"
+          }}>
+            Створено з ❤️ для молоді Шевченківського району
+          </div>
+        </div>
       </Extra>
     </>
   );

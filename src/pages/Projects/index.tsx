@@ -168,7 +168,7 @@ const Projects = () => {
                     flexDirection: "column",
                     justifyContent: "space-between",
                     height: "100%",
-                    transition: "transform 0.3s ease",
+                    transition: "transform 0.1s ease",
                   }}
                   onClick={() => history.push(`/event/${id}`)}
                   cover={

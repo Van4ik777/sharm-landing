@@ -37,12 +37,12 @@ const organs: StructureItem[] = [
     id: "president",
     title: "Президент",
     icon: icons.president,
-    image: "prez.png",
+    image: "dima.png",
     description:
       "Керує ШАРМом, організовує засідання, координує діяльність органу. Обирається на два періоди (семестри).",
   contact: {
     email: "sharm.lider.ua@gmail.com",
-    name: "Танчак Любов"
+    name: "Дмитро Матвєєв"
   },
   },
   {
