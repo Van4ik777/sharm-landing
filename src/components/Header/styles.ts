@@ -11,7 +11,7 @@ export const HeaderSection = styled("header")`
   }
 
   position: fixed;
-  top: -100px;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
@@ -19,10 +19,13 @@ export const HeaderSection = styled("header")`
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(180%) blur(20px);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: background 0.6s ease;
+
+  transform: translateY(-100px);   /* вместо top: -100px */
+  transition: transform 0.6s ease, background 0.6s ease;
 
   overflow: hidden;
 `;
+
 
 
 
