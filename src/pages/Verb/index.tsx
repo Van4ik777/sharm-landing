@@ -52,7 +52,7 @@ const Verb = () => {
         style={{ 
           textAlign: "center", 
           marginBottom: "3rem", 
-          color: "#73d13d",
+          color: "#2C5E5C",
           fontSize: isMobile ? "24px" : "44px"
         }}
       >
@@ -97,7 +97,7 @@ const Verb = () => {
                   height: "350px",
                   objectFit: "cover",
                   borderRadius: "16px",
-                  boxShadow: "0 8px 30px rgba(115, 209, 61, 0.2)",
+                  boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
                   display: imageLoading['verba_logo.png'] === false ? "block" : "none",
                   transition: "opacity 0.3s ease-in-out"
                 }}
@@ -143,7 +143,7 @@ const Verb = () => {
                   height: "350px",
                   objectFit: "cover",
                   borderRadius: "16px",
-                  boxShadow: "0 8px 30px rgba(115, 209, 61, 0.2)",
+                  boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
                   display: imageLoading['verb_main.png'] === false ? "block" : "none",
                   transition: "opacity 0.3s ease-in-out"
                 }}
@@ -192,7 +192,7 @@ const Verb = () => {
                   height: "350px",
                   objectFit: "cover",
                   borderRadius: "16px",
-                  boxShadow: "0 8px 30px rgba(115, 209, 61, 0.2)",
+                  boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
                   display: imageLoading['verba1.png'] === false ? "block" : "none",
                   transition: "opacity 0.3s ease-in-out"
                 }}
@@ -238,7 +238,7 @@ const Verb = () => {
                   height: "350px",
                   objectFit: "cover",
                   borderRadius: "16px",
-                  boxShadow: "0 8px 30px rgba(115, 209, 61, 0.2)",
+                  boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
                   display: imageLoading['verba2.png'] === false ? "block" : "none",
                   transition: "opacity 0.3s ease-in-out"
                 }}
@@ -263,7 +263,7 @@ const Verb = () => {
                 fontSize: isMobile ? "14px" : "20px", 
                 lineHeight: "1.8", 
                 marginBottom: "3rem",
-                color: "#73d13d",
+                color: "#2C5E5C",
                 fontWeight: "600"
               }}>
                 Унікальний екологічний проєкт із висадження енергетичних верб для відновлення довкілля та сталого розвитку
@@ -282,18 +282,18 @@ const Verb = () => {
                     padding: "2rem",
                     textAlign: "center",
                     borderRadius: "12px",
-                    boxShadow: "0 4px 20px rgba(115, 209, 61, 0.1)",
-                    border: "1px solid rgba(115, 209, 61, 0.2)",
+                    boxShadow: "0 4px 20px rgba(44, 94, 92, 0.1)",
+                    border: "1px solid rgba(44, 94, 92, 0.2)",
                     height: "100%"
                   }}
                 >
                   <div style={{ 
                     fontSize: "40px", 
                     marginBottom: "1rem",
-                    color: "#73d13d"
+                    color: "#2C5E5C"
                   }}>⚡</div>
                   <Title level={4} style={{ 
-                    color: "#73d13d", 
+                    color: "#2C5E5C", 
                     marginBottom: "1rem",
                     fontSize: isMobile ? "16px" : "20px"
                   }}>
@@ -316,18 +316,18 @@ const Verb = () => {
                     padding: "2rem",
                     textAlign: "center",
                     borderRadius: "12px",
-                    boxShadow: "0 4px 20px rgba(115, 209, 61, 0.1)",
-                    border: "1px solid rgba(115, 209, 61, 0.2)",
+                    boxShadow: "0 4px 20px rgba(44, 94, 92, 0.1)",
+                    border: "1px solid rgba(44, 94, 92, 0.2)",
                     height: "100%"
                   }}
                 >
                   <div style={{ 
                     fontSize: "40px", 
                     marginBottom: "1rem",
-                    color: "#73d13d"
+                    color: "#2C5E5C"
                   }}>🌱</div>
                   <Title level={4} style={{ 
-                    color: "#73d13d", 
+                    color: "#2C5E5C", 
                     marginBottom: "1rem",
                     fontSize: isMobile ? "16px" : "20px"
                   }}>
@@ -350,18 +350,18 @@ const Verb = () => {
                     padding: "2rem",
                     textAlign: "center",
                     borderRadius: "12px",
-                    boxShadow: "0 4px 20px rgba(115, 209, 61, 0.1)",
-                    border: "1px solid rgba(115, 209, 61, 0.2)",
+                    boxShadow: "0 4px 20px rgba(44, 94, 92, 0.1)",
+                    border: "1px solid rgba(44, 94, 92, 0.2)",
                     height: "100%"
                   }}
                 >
                   <div style={{ 
                     fontSize: "40px", 
                     marginBottom: "1rem",
-                    color: "#73d13d"
+                    color: "#2C5E5C"
                   }}>🏆</div>
                   <Title level={4} style={{ 
-                    color: "#73d13d", 
+                    color: "#2C5E5C", 
                     marginBottom: "1rem",
                     fontSize: isMobile ? "16px" : "20px"
                   }}>

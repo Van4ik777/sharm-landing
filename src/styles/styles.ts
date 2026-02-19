@@ -2,24 +2,41 @@ import { createGlobalStyle } from "styled-components";
 
 export const Styles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Intro:wght@400;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Evolve:wght@400;700&display=swap');
 
     @font-face {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Intro", sans-serif;
         font-style: normal;
+        font-weight: 400;
     }
 
     @font-face {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Intro", sans-serif;
         font-style: normal;
+        font-weight: 700;
     }
+
+    @font-face {
+        font-family: "Evolventa", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    @font-face {
+        font-family: "Evolventa", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+    }
+
     span{
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: rgb(14, 14, 14);}
+        font-family: "Evolventa", "Intro", sans-serif;
+        color: rgb(14, 14, 14);
+    }
     body,
     html,
     a {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Evolventa", "Intro", sans-serif;
         color: rgb(14, 14, 14);
     }
 
@@ -79,7 +96,7 @@ export const Styles = createGlobalStyle`
     h3,
     h4,
     h5 {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Intro", "Evolventa", sans-serif;
         color: rgb(101, 32, 212); 
         font-size: 56px;
         line-height: 1.18;
@@ -94,7 +111,7 @@ export const Styles = createGlobalStyle`
     }
 
     h6 {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Intro", "Evolventa", sans-serif;
         color: rgb(101, 32, 212);
         font-size: 44px;
         line-height: 1.18;

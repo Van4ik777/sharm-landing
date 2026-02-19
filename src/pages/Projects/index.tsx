@@ -100,7 +100,7 @@ const Projects = () => {
                     hoverable
                     onClick={() => history.push("/verb")}
                     style={{
-                      border: "2px solid #73d13d",
+                      border: "2px solid #2C5E5C",
                       borderRadius: 16,
                       padding: 24,
                       boxShadow:
@@ -127,7 +127,7 @@ const Projects = () => {
                         size="large"
                         style={{
                           borderRadius: 10,
-                          backgroundColor: "#73d13d",
+                          backgroundColor: "rgba(115, 209, 61, 1)",
                           border: "none",
                           fontWeight: 600,
                         }}
