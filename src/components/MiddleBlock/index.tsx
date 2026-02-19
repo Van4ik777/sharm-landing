@@ -86,7 +86,7 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                   </Col>
                   
                   <Col xs={24} sm={12} md={12} lg={10}>
-                    <Slide direction="right" triggerOnce delay={600}>
+                    <Slide direction="right" triggerOnce delay={100}>
                       <ImageCard onClick={() => handleProjectClick(featuredPastProject2.id)}>
                         <ImageContainer>
                           <img
