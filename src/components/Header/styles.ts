@@ -5,27 +5,25 @@ import { MenuOutlined } from "@ant-design/icons";
 export const HeaderSection = styled("header")`
   padding: 1rem 0.5rem;
 
-  .ant-row-space-between {
+  .ant-row {
     align-items: center;
     text-align: center;
   }
 
   position: fixed;
-  top: -500px;
+  top: -100px;
   left: 0;
   width: 100%;
   z-index: 1000;
-
-  padding-top: 500px;
 
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(180%) blur(20px);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   transition: background 0.6s ease;
 
-  padding-bottom: 0px;
-  overflow: hidden; /* защита для мобильных */
+  overflow: hidden;
 `;
+
 
 
 

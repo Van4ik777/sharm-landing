@@ -77,7 +77,7 @@ const Projects = () => {
     >
       <Title
         level={2}
-        style={{ textAlign: "center", margin: "4rem 0 2rem", marginTop: 100 }}
+        style={{ textAlign: "center", margin: "4rem 0 2rem", marginTop: 150 }}
       >
       проєкти
       </Title>
