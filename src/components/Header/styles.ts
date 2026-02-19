@@ -15,12 +15,39 @@ export const HeaderSection = styled("header")`
   left: 0;
   width: 100%;
   z-index: 1000;
+
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(180%) blur(20px);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   transition: background 0.6s ease;
-  padding-bottom: 0px; 
+
+  padding-bottom: 0px;
+  overflow: hidden; /* защита для мобильных */
+
+  /* Специальные стили для мобильных устройств */
+  @media only screen and (max-width: 768px) {
+    padding: 0.75rem 0.5rem;
+    min-height: 60px;
+  }
+
+  /* Дополнительные стили для Telegram WebView и других мобильных браузеров */
+  @media only screen and (max-width: 768px) {
+    /* Убираем возможный safe area для iOS */
+    padding-top: env(safe-area-inset-top, 0.75rem);
+    
+    /* Для Telegram WebView на Android */
+    body.tg-webview & {
+      top: 0;
+      padding-top: 0.5rem;
+    }
+    
+    /* Для мобильных браузеров в полноэкранном режиме */
+    @media (display-mode: standalone) {
+      padding-top: env(safe-area-inset-top, 0.75rem);
+    }
+  }
 `;
+
 
 export const BottomLine = styled.div` 
   margin: 0 auto;

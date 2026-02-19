@@ -7,6 +7,18 @@ import Router from "./router";
 import i18n from "./translation";
 import ClickSparks from "./common/ClickSparks";
 
+// Определяем Telegram WebView и добавляем класс к body
+const isTelegramWebView = () => {
+  return (window as any).TelegramWebviewProxy !== undefined || 
+         (window as any).Telegram !== undefined ||
+         navigator.userAgent.includes('Telegram') ||
+         window.location.search.includes('tgWebAppData');
+};
+
+if (isTelegramWebView()) {
+  document.body.classList.add('tg-webview');
+}
+
 const App = () => (
   <BrowserRouter>
     <ClickSparks />
