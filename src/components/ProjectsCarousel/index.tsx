@@ -9,7 +9,6 @@ const ProjectsCarousel: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const observerRef = useRef<HTMLDivElement>(null);
 
-  const visibleCards = 3;
   const totalCards = Math.min(10, Projects.length);
   const displayProjects = Projects.slice(0, totalCards);
 
@@ -70,7 +69,7 @@ const ProjectsCarousel: React.FC = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [nextSlide, prevSlide]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
