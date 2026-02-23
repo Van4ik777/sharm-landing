@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Projects } from '../../data/projects';
 import './styles.css';
 
@@ -25,19 +25,19 @@ const ProjectsCarousel: React.FC = () => {
     'linear-gradient(135deg, #EF4444 0%, #06B6D4 100%)'
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev + 1) % totalCards);
     setTimeout(() => setIsAnimating(false), 300);
-  };
+  }, [isAnimating, totalCards]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev - 1 + totalCards) % totalCards);
     setTimeout(() => setIsAnimating(false), 300);
-  };
+  }, [isAnimating, totalCards]);
 
   const goToSlide = (index: number) => {
     if (isAnimating) return;
