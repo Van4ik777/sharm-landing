@@ -241,7 +241,7 @@ const Footer = ({ t }: { t: TFunction }) => {
           {`
             @media screen and (max-width: 768px) {
               .footer-bottom-only {
-                padding: "4.375rem" !important;
+                padding: "6.5625rem" !important;
               }
             }
           `}

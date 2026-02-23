@@ -57,7 +57,6 @@ export const Styles = createGlobalStyle`
         inset: 0;
         pointer-events: none;
         background-image:
-            radial-gradient(circle at 10% 12%, rgba(101,32,212,0.08) 0 220px, transparent 420px),
             radial-gradient(circle at 88% 78%, rgba(0,122,255,0.06) 0 260px, transparent 520px),
             radial-gradient(circle at 55% 40%, rgba(255,193,7,0.03) 0 160px, transparent 320px);
         background-repeat: no-repeat;

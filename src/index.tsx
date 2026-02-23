@@ -6,6 +6,7 @@ import 'antd/dist/antd.min.css';
 import Router from "./router";
 import i18n from "./translation";
 import ClickSparks from "./common/ClickSparks";
+import AnimatedBackground from "./common/AnimatedBackground";
 
 // Определяем Telegram WebView и добавляем класс к body
 const isTelegramWebView = () => {
@@ -21,6 +22,7 @@ if (isTelegramWebView()) {
 
 const App = () => (
   <BrowserRouter>
+    <AnimatedBackground />
     <ClickSparks />
     <I18nextProvider i18n={i18n}>
       <Router />

@@ -31,6 +31,7 @@ const Event = () => {
   const history = useHistory();
   const data = Projects.find((project) => project.id === Number(id));
   const [imagesLoaded, setImagesLoaded] = useState(Array(data?.images?.length || 0).fill(false));
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
   // Progressive skeleton timeout: show gallery immediately if images are cached
   const [showGallery, setShowGallery] = useState(false);
   React.useEffect(() => {
@@ -41,6 +42,15 @@ const Event = () => {
     // Убираем задержку - показываем галерею сразу
     setShowGallery(true);
   }, [imagesLoaded]);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
 
   const handleImgLoad = (idx: number) => {
@@ -107,13 +117,13 @@ const Event = () => {
               ? (
                 <>
                   {getGridSkeleton(1, 1, 350)}
-                  {getGridSkeleton(2, 2, 250)}
+                  {getGridSkeleton(2, isMobile ? 1 : 2, 250)}
                 </>
               )
               : data.images.length === 4
               ? getGridSkeleton(4, 2, 300)
               : data.images.length === 2
-              ? getGridSkeleton(2, 2, 400)
+              ? getGridSkeleton(2, isMobile ? 1 : 2, 400)
               : getGridSkeleton(1, 1, 500)
           ) : (
             <div
@@ -124,14 +134,14 @@ const Event = () => {
                   data.images.length === 1
                     ? "1fr"
                     : data.images.length === 2
-                    ? "1fr 1fr"
+                    ? (isMobile ? "1fr" : "1fr 1fr")
                     : data.images.length === 4
                     ? "1fr 1fr"
                     : "1fr",
                 gridTemplateRows: data.images.length === 4 ? "1fr 1fr" : undefined,
                 width: "100%",
-                minWidth: data.images.length === 2 ? 600 : undefined,
-                overflowX: data.images.length === 2 ? "auto" : undefined,
+                minWidth: (data.images.length === 2 && !isMobile) ? 600 : undefined,
+                overflowX: (data.images.length === 2 && !isMobile) ? "auto" : undefined,
               }}
             >
               {data.images.length === 3 ? (
@@ -145,7 +155,7 @@ const Event = () => {
                     onError={() => handleImgLoad(0)}
                   />
                   <div
-                    style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}
+                    style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: "1rem" }}
                   >
                     {[data.images[1], data.images[2]].map((img, i) => (
                       <img
@@ -153,7 +163,7 @@ const Event = () => {
                         src={`/img/svg/${img}`}
                         alt={`${data.title} - фото ${i + 2}`}
                         style={{ width: "100%", maxHeight: 250, objectFit: "cover", borderRadius: 12, marginBottom: 8 }}
-                        loading="eager"
+                        loading="lazy"
                         onLoad={() => handleImgLoad(i + 1)}
                         onError={() => handleImgLoad(i + 1)}
                       />
@@ -178,7 +188,7 @@ const Event = () => {
                       borderRadius: 12,
                       marginBottom: 8,
                     }}
-                    loading="eager"
+                    loading={index === 0 ? "eager" : "lazy"}
                     onLoad={() => handleImgLoad(index)}
                     onError={() => handleImgLoad(index)}
                   />

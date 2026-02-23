@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Row, Col } from "antd";
+import { Button, Typography, Row, Col } from "antd";
 import { motion, easeInOut } from "framer-motion";
+import { useHistory } from "react-router-dom";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
 
@@ -20,6 +22,7 @@ const fadeInUp = {
 const Verb = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [imageLoading, setImageLoading] = useState<{ [key: string]: boolean }>({});
+  const history = useHistory();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -47,206 +50,221 @@ const Verb = () => {
       padding: "2rem",
       marginTop: "150px" 
     }}>
-      <Title 
-        level={1} 
-        style={{ 
-          textAlign: "center", 
-          marginBottom: "3rem", 
-          color: "#2C5E5C",
-          fontSize: isMobile ? "24px" : "44px"
-        }}
-      >
-        🌿 Енергетична верба
-      </Title>
+        <Button
+          type="link"
+          icon={<ArrowLeftOutlined />}
+          onClick={() => history.push("/projects")}
+          style={{
+            alignSelf: "flex-start",
+            marginBottom: "1rem",
+            fontSize: 16,
+            color: "#000",
+            position: "relative"
+          }}
+        >
+          Назад до проєктів
+        </Button>
+<Title 
+  level={1} 
+  style={{ 
+    textAlign: "center", 
+    marginBottom: "3rem", 
+    color: "#2C5E5C",
+    fontSize: isMobile ? "24px" : "44px"
+  }}
+>
+  🌿 Енергетична верба
+</Title>
 
-      <Row gutter={[32, 32]}>
-        <Col xs={24} md={12}>
-          <motion.div
-            custom={0}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <div style={{ position: 'relative' }}>
-              {/* Скелетон загрузки */}
-              {imageLoading['verba_logo.png'] !== false && (
-                <div style={{
-                  width: "100%",
-                  height: "350px",
-                  backgroundColor: "#f0f0f0",
-                  borderRadius: "16px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
-                  backgroundSize: "200% 100%",
-                  animation: "shimmer 1.5s infinite"
-                }}>
-                  <div style={{ fontSize: "24px", color: "#ccc" }}>📷</div>
-                </div>
-              )}
-              
-              <img
-                src="/img/svg/verba_logo.png"
-                alt="Енергетична верба - фото 2"
-                onLoad={() => handleImageLoad('verba_logo.png')}
-                onError={() => handleImageError('verba_logo.png')}
-                style={{
-                  width: "100%",
-                  height: "350px",
-                  objectFit: "cover",
-                  borderRadius: "16px",
-                  boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
-                  display: imageLoading['verba_logo.png'] === false ? "block" : "none",
-                  transition: "opacity 0.3s ease-in-out"
-                }}
-              />
-            </div>
-          </motion.div>
-        </Col>
+{/* Первый ряд с двумя изображениями */}
+<Row gutter={[16, 16]}>
+  <Col xs={12} md={12}>
+    <motion.div
+      custom={0}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeInUp}
+    >
+      <div style={{ position: 'relative' }}>
+        {/* Скелетон загрузки */}
+        {imageLoading['verba_logo.png'] !== false && (
+          <div style={{
+            width: "100%",
+            height: isMobile ? "200px" : "350px",
+            backgroundColor: "#f0f0f0",
+            borderRadius: "16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
+            backgroundSize: "200% 100%",
+            animation: "shimmer 1.5s infinite"
+          }}>
+            <div style={{ fontSize: isMobile ? "20px" : "24px", color: "#ccc" }}>📷</div>
+          </div>
+        )}
         
-        <Col xs={24} md={12}>
-          <motion.div
-            custom={1}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <div style={{ position: 'relative' }}>
-              {/* Скелетон загрузки */}
-              {imageLoading['verb_main.png'] !== false && (
-                <div style={{
-                  width: "100%",
-                  height: "350px",
-                  backgroundColor: "#f0f0f0",
-                  borderRadius: "16px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
-                  backgroundSize: "200% 100%",
-                  animation: "shimmer 1.5s infinite"
-                }}>
-                  <div style={{ fontSize: "24px", color: "#ccc" }}>📷</div>
-                </div>
-              )}
-              
-              <img
-                src="/img/svg/verb_main.png"
-                alt="Енергетична верба - фото 1"
-                onLoad={() => handleImageLoad('verb_main.png')}
-                onError={() => handleImageError('verb_main.png')}
-                style={{
-                  width: "100%",
-                  height: "350px",
-                  objectFit: "cover",
-                  borderRadius: "16px",
-                  boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
-                  display: imageLoading['verb_main.png'] === false ? "block" : "none",
-                  transition: "opacity 0.3s ease-in-out"
-                }}
-              />
-            </div>
-          </motion.div>
-        </Col>
-      </Row>
+        <img
+          src="/img/svg/verba_logo.png"
+          alt="Енергетична верба - фото 2"
+          onLoad={() => handleImageLoad('verba_logo.png')}
+          onError={() => handleImageError('verba_logo.png')}
+          style={{
+            width: "100%",
+            height: isMobile ? "200px" : "350px",
+            objectFit: "cover",
+            borderRadius: "16px",
+            boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
+            display: imageLoading['verba_logo.png'] === false ? "block" : "none",
+            transition: "opacity 0.3s ease-in-out"
+          }}
+        />
+      </div>
+    </motion.div>
+  </Col>
+  
+  <Col xs={12} md={12}>
+    <motion.div
+      custom={1}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeInUp}
+    >
+      <div style={{ position: 'relative' }}>
+        {/* Скелетон загрузки */}
+        {imageLoading['verb_main.png'] !== false && (
+          <div style={{
+            width: "100%",
+            height: isMobile ? "200px" : "350px",
+            backgroundColor: "#f0f0f0",
+            borderRadius: "16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
+            backgroundSize: "200% 100%",
+            animation: "shimmer 1.5s infinite"
+          }}>
+            <div style={{ fontSize: isMobile ? "20px" : "24px", color: "#ccc" }}>📷</div>
+          </div>
+        )}
+        
+        <img
+          src="/img/svg/verb_main.png"
+          alt="Енергетична верба - фото 1"
+          onLoad={() => handleImageLoad('verb_main.png')}
+          onError={() => handleImageError('verb_main.png')}
+          style={{
+            width: "100%",
+            height: isMobile ? "200px" : "350px",
+            objectFit: "cover",
+            borderRadius: "16px",
+            boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
+            display: imageLoading['verb_main.png'] === false ? "block" : "none",
+            transition: "opacity 0.3s ease-in-out"
+          }}
+        />
+      </div>
+    </motion.div>
+  </Col>
+</Row>
 
-      {/* Дополнительные изображения verba1 и verba2 */}
-      <Row gutter={[32, 32]} style={{ marginTop: "3rem" }}>
-        <Col xs={24} md={12}>
-          <motion.div
-            custom={2}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <div style={{ position: 'relative' }}>
-              {/* Скелетон загрузки */}
-              {imageLoading['verba1.png'] !== false && (
-                <div style={{
-                  width: "100%",
-                  height: "350px",
-                  backgroundColor: "#f0f0f0",
-                  borderRadius: "16px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
-                  backgroundSize: "200% 100%",
-                  animation: "shimmer 1.5s infinite"
-                }}>
-                  <div style={{ fontSize: "24px", color: "#ccc" }}>📷</div>
-                </div>
-              )}
-              
-              <img
-                src="/img/svg/verba1.png"
-                alt="Енергетична верба - додаткове фото 1"
-                onLoad={() => handleImageLoad('verba1.png')}
-                onError={() => handleImageError('verba1.png')}
-                style={{
-                  width: "100%",
-                  height: "350px",
-                  objectFit: "cover",
-                  borderRadius: "16px",
-                  boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
-                  display: imageLoading['verba1.png'] === false ? "block" : "none",
-                  transition: "opacity 0.3s ease-in-out"
-                }}
-              />
-            </div>
-          </motion.div>
-        </Col>
+{/* Второй ряд с двумя изображениями */}
+<Row gutter={[16, 16]} style={{ marginTop: "1rem" }}>
+  <Col xs={12} md={12}>
+    <motion.div
+      custom={2}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeInUp}
+    >
+      <div style={{ position: 'relative' }}>
+        {/* Скелетон загрузки */}
+        {imageLoading['verba1.png'] !== false && (
+          <div style={{
+            width: "100%",
+            height: isMobile ? "200px" : "350px",
+            backgroundColor: "#f0f0f0",
+            borderRadius: "16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
+            backgroundSize: "200% 100%",
+            animation: "shimmer 1.5s infinite"
+          }}>
+            <div style={{ fontSize: isMobile ? "20px" : "24px", color: "#ccc" }}>📷</div>
+          </div>
+        )}
         
-        <Col xs={24} md={12}>
-          <motion.div
-            custom={3}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <div style={{ position: 'relative' }}>
-              {/* Скелетон загрузки */}
-              {imageLoading['verba2.png'] !== false && (
-                <div style={{
-                  width: "100%",
-                  height: "350px",
-                  backgroundColor: "#f0f0f0",
-                  borderRadius: "16px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
-                  backgroundSize: "200% 100%",
-                  animation: "shimmer 1.5s infinite"
-                }}>
-                  <div style={{ fontSize: "24px", color: "#ccc" }}>📷</div>
-                </div>
-              )}
-              
-              <img
-                src="/img/svg/verba2.png"
-                alt="Енергетична верба - додаткове фото 2"
-                onLoad={() => handleImageLoad('verba2.png')}
-                onError={() => handleImageError('verba2.png')}
-                style={{
-                  width: "100%",
-                  height: "350px",
-                  objectFit: "cover",
-                  borderRadius: "16px",
-                  boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
-                  display: imageLoading['verba2.png'] === false ? "block" : "none",
-                  transition: "opacity 0.3s ease-in-out"
-                }}
-              />
-            </div>
-          </motion.div>
-        </Col>
-      </Row>
+        <img
+          src="/img/svg/verba1.png"
+          alt="Енергетична верба - додаткове фото 1"
+          onLoad={() => handleImageLoad('verba1.png')}
+          onError={() => handleImageError('verba1.png')}
+          style={{
+            width: "100%",
+            height: isMobile ? "200px" : "350px",
+            objectFit: "cover",
+            borderRadius: "16px",
+            boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
+            display: imageLoading['verba1.png'] === false ? "block" : "none",
+            transition: "opacity 0.3s ease-in-out"
+          }}
+        />
+      </div>
+    </motion.div>
+  </Col>
+  
+  <Col xs={12} md={12}>
+    <motion.div
+      custom={3}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeInUp}
+    >
+      <div style={{ position: 'relative' }}>
+        {/* Скелетон загрузки */}
+        {imageLoading['verba2.png'] !== false && (
+          <div style={{
+            width: "100%",
+            height: isMobile ? "200px" : "350px",
+            backgroundColor: "#f0f0f0",
+            borderRadius: "16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
+            backgroundSize: "200% 100%",
+            animation: "shimmer 1.5s infinite"
+          }}>
+            <div style={{ fontSize: isMobile ? "20px" : "24px", color: "#ccc" }}>📷</div>
+          </div>
+        )}
+        
+        <img
+          src="/img/svg/verba2.png"
+          alt="Енергетична верба - додаткове фото 2"
+          onLoad={() => handleImageLoad('verba2.png')}
+          onError={() => handleImageError('verba2.png')}
+          style={{
+            width: "100%",
+            height: isMobile ? "200px" : "350px",
+            objectFit: "cover",
+            borderRadius: "16px",
+            boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
+            display: imageLoading['verba2.png'] === false ? "block" : "none",
+            transition: "opacity 0.3s ease-in-out"
+          }}
+        />
+      </div>
+    </motion.div>
+  </Col>
+</Row>
 
       <motion.div
         custom={4}
