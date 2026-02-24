@@ -31,7 +31,7 @@ export const ImagesWrapper = styled("div")`
 
 export const ImageCard = styled("div")`
   cursor: pointer;
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-radius: 16px;
   overflow: hidden;
   background: white;
@@ -53,7 +53,7 @@ export const ImageContainer = styled("div")`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease;
+    transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   ${ImageCard}:hover & img {
