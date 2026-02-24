@@ -1,6 +1,33 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Projects } from '../../data/projects';
 import './styles.css';
+
+const carouselData = [
+  {
+    id: 1,
+    title: 'Партнерство',
+    text: 'Взаємодія між учнями, вчителями та адміністрацією будується не на ієрархії, а на рівних правах. Це вміння працювати в команді, де голос кожного важливий.'
+  },
+  {
+    id: 2,
+    title: 'Відповідальність',
+    text: 'Кожен лідер ШАРМу розуміє, що його дії впливають на імідж району та добробут учнів. Це готовність доводити справу до кінця та відповідати за результат'
+  },
+  {
+    id: 3,
+    title: 'Креативність та Інноваційність',
+    text: 'ШАРМ заохочує нестандартні підходи до вирішення проблем, організацію сучасних івентів та використання нових технологій.'
+  },
+  {
+    id: 4,
+    title: 'Прозорість',
+    text: "Усі рішення, вибори голів та розподіл обов'язків мають бути відкритими. Це створює довіру між самоврядуванням та іншими учнями району."
+  },
+  {
+    id: 5,
+    title: 'Активна громадянська позиція',
+    text: 'Це про небайдужість до екології, волонтерства, прав людини та розвитку своєї громади. Це виховання лідерів, які готові змінювати країну вже зараз.'
+  }
+];
 
 const ProjectsCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,8 +36,8 @@ const ProjectsCarousel: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const observerRef = useRef<HTMLDivElement>(null);
 
-  const totalCards = Math.min(10, Projects.length);
-  const displayProjects = Projects.slice(0, totalCards);
+  const totalCards = carouselData.length;
+  const displayData = carouselData;
 
   const colors = [
     'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)',
@@ -118,17 +145,18 @@ const ProjectsCarousel: React.FC = () => {
       
       <div className="carousel-container" ref={carouselRef}>
         <div className="carousel-track">
-          {displayProjects.map((project, index) => {
+          {displayData.map((item, index: number) => {
             const position = getCardPosition(index);
             return (
               <div
-                key={project.id}
+                key={item.id}
                 className={`project-card ${position} ${isAnimating ? 'animating' : ''}`}
                 style={{ background: colors[index % colors.length] }}
                 onClick={() => handleCardClick(index)}
               >
                 <div className="card-content">
-                  <h3>{project.title.toUpperCase()}</h3>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
                 </div>
               </div>
             );
@@ -149,7 +177,7 @@ const ProjectsCarousel: React.FC = () => {
       </div>
       
       <div className="carousel-dots">
-        {displayProjects.map((_, index) => (
+        {displayData.map((_, index: number) => (
           <button
             key={index}
             className={`dot ${index === currentIndex ? 'active' : ''}`}
