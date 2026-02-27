@@ -61,12 +61,12 @@ const organs: StructureItem[] = [
     id: "premier",
     title: "Прем'єр",
     icon: icons.premier,
-    image: "prem.png",
+    image: "sofa.jpg",
     description:
       "Відповідає за протоколи засідань, зв'язок між членами ШАРМу. Обирається на два періоди.",
   contact: {
     email: "sharm.lider.ua@gmail.com",
-    name: "Шатковська Марія"
+    name: "Софія Вакуленко"
   },
   }
 ];

@@ -68,7 +68,7 @@ const Header = ({ t }: { t: TFunction }) => {
             history.push("/projects"); 
           }}
         >
-        <Span>{t("проєкти")}</Span>
+        <Span>{t("Проєкти")}</Span>
         </CustomNavLinkSmall>
 
 
@@ -78,7 +78,7 @@ const Header = ({ t }: { t: TFunction }) => {
             history.push("/structure"); 
           }}
         >
-        <Span>{t("структура")}</Span>
+        <Span>{t("Структура")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall
           style={{ width: "160px" }}

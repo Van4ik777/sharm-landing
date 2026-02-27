@@ -79,7 +79,7 @@ const Projects = () => {
         level={2}
         style={{ textAlign: "center", margin: "4rem 0 2rem", marginTop: 150 }}
       >
-      проєкти
+      Проєкти
       </Title>
       <Row gutter={[32, 32]}>
         {[...projectsData].map(({ id, title, description, images }, index) => {
