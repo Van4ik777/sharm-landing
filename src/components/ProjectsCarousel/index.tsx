@@ -15,7 +15,7 @@ const carouselData = [
   {
     id: 3,
     title: 'Креативність та Інноваційність',
-    text: 'ШАРМ заохочує нестандартні підходи до вирішення проблем, організацію сучасних івентів та використання нових технологій.'
+    text: 'Наше самоврядування заохочує нестандартні підходи до вирішення проблем, організацію сучасних івентів та використання нових технологій.'
   },
   {
     id: 4,
@@ -40,16 +40,12 @@ const ProjectsCarousel: React.FC = () => {
   const displayData = carouselData;
 
   const colors = [
-    'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)',
-    'linear-gradient(135deg, #F97316 0%, #EF4444 100%)',
-    'linear-gradient(135deg, #06B6D4 0%, #0EA5E9 100%)',
-    'linear-gradient(135deg, #10B981 0%, #34D399 100%)',
-    'linear-gradient(135deg, #F59E0B 0%, #FCD34D 100%)',
-    'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
-    'linear-gradient(135deg, #14B8A6 0%, #5EEAD4 100%)',
-    'linear-gradient(135deg, #F43F5E 0%, #FB7185 100%)',
-    'linear-gradient(135deg, #F97316 0%, #FB923C 100%)',
-    'linear-gradient(135deg, #EF4444 0%, #06B6D4 100%)'
+    'linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%)',
+    'linear-gradient(135deg, #C084FC 0%, #A855F7 100%)',
+    'linear-gradient(135deg, #E879F9 0%, #D946EF 100%)',
+    'linear-gradient(135deg, #F0ABFC 0%, #E879F9 100%)',
+    'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
+    'linear-gradient(135deg, #A78BFA 0%, #818CF8 100%)'
   ];
 
   const nextSlide = useCallback(() => {
