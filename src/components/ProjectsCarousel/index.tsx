@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, memo } from 'react';
 import './styles.css';
 
 const carouselData = [
@@ -29,7 +29,7 @@ const carouselData = [
   }
 ];
 
-const ProjectsCarousel: React.FC = () => {
+const ProjectsCarousel: React.FC = memo(() => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -135,7 +135,7 @@ const ProjectsCarousel: React.FC = () => {
   return (
     <div ref={observerRef} className={`projects-carousel ${isVisible ? 'visible' : ''}`}>
       <div className="carousel-header">
-        <h1>ШАРМ - ЦЕ</h1>
+        <h1>"ЛІДЕР Я І ЛІДЕР ТИ ШАРМ У СЕРЦІ НАЗАВЖДИ"</h1>
         <p>Ознайомтесь з цінностями шарму</p>
       </div>
       
@@ -188,6 +188,8 @@ const ProjectsCarousel: React.FC = () => {
       </div>
     </div>
   );
-};
+});
+
+ProjectsCarousel.displayName = 'ProjectsCarousel';
 
 export default ProjectsCarousel;

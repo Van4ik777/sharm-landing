@@ -1,6 +1,7 @@
 import { Row, Col } from "antd";
 import { Fade } from "react-awesome-reveal";
 import { withTranslation } from "react-i18next";
+import React, { memo, useEffect, useState, useCallback } from "react";
 
 import { ContentBlockProps } from "./types";
 import { Button } from "../../common/Button";
@@ -15,9 +16,8 @@ import {
   StyledRow,
   ButtonWrapper,
 } from "./styles";
-import { useEffect, useState } from "react";
 
-const ContentBlock = ({
+const ContentBlock = memo(({
   icon,
   title,
   content,
@@ -27,12 +27,13 @@ const ContentBlock = ({
   id,
   direction,
 }: ContentBlockProps) => {
-  const scrollTo = (id: string) => {
+  const scrollTo = useCallback((id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
       behavior: "smooth",
     });
-  };
+  }, []);
+
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -122,6 +123,8 @@ const ContentBlock = ({
       </Fade>
     </ContentSection>
   );
-};
+});
+
+ContentBlock.displayName = 'ContentBlock';
 
 export default withTranslation()(ContentBlock);

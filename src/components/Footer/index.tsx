@@ -115,6 +115,22 @@ const Footer = ({ t }: { t: TFunction }) => {
             .social-networks-fixed {
               display: block !important;
             }
+            
+            /* Скрываем мобильные социальные сети на десктопе */
+            .mobile-social-networks {
+              display: none !important;
+            }
+          }
+          
+          @media screen and (max-width: 768px) {
+            .footer-upper {
+              display: none !important;
+            }
+            
+            /* Показываем мобильные социальные сети */
+            .mobile-social-networks {
+              display: flex !important;
+            }
           }
         `}
       </style>
@@ -157,6 +173,27 @@ const Footer = ({ t }: { t: TFunction }) => {
             </Col>
             
             <Col xs={24} sm={8} style={{ textAlign: "center", margin: "1rem 0" }}>
+              {/* Мобильные социальные сети */}
+              <div className="mobile-social-networks" style={{ 
+                display: "none", // По умолчанию скрыто
+                justifyContent: "center", 
+                gap: "1rem",
+                marginBottom: "1.5rem"
+              }}>
+                <SocialLink
+                  href="https://www.instagram.com/sharm.leader/"
+                  src="instagram.svg"
+                />
+                <SocialLink
+                  href="https://www.tiktok.com/@sharm.leader_/"
+                  src="tiktok.svg"
+                />
+                <SocialLink
+                  href="https://www.facebook.com/profile.php?id=100063297334293"
+                  src="facebook.svg"
+                />
+              </div>
+              
               <div style={{ marginBottom: "1.5rem" }}>
                 <div style={{ 
                   display: "flex", 

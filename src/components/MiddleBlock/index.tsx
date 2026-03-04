@@ -2,6 +2,7 @@ import { Row, Col } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { Button } from "../../common/Button";
+import OptimizedImage from "../../common/ImageOptimizer";
 import { MiddleBlockSection, Content, ContentWrapper, ImageContainer, ImageCard, ImageDescription, ImagesWrapper } from "./styles";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -58,8 +59,8 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                     <Slide direction="left" triggerOnce delay={400}>
                       <ImageCard onClick={() => handleProjectClick(featuredPastProject1.id)}>
                         <ImageContainer>
-                          <img
-                            src={`/img/svg/${featuredPastProject1.images[0]}`}
+                          <OptimizedImage
+                            src={`svg/${featuredPastProject1.images[0]}`}
                             alt={featuredPastProject1.title}
                             loading="eager"
                           />
@@ -89,8 +90,8 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                     <Slide direction="right" triggerOnce delay={100}>
                       <ImageCard onClick={() => handleProjectClick(featuredPastProject2.id)}>
                         <ImageContainer>
-                          <img
-                            src={`/img/svg/${featuredPastProject2.images[0]}`}
+                          <OptimizedImage
+                            src={`svg/${featuredPastProject2.images[0]}`}
                             alt={featuredPastProject2.title}
                             loading="eager"
                           />
