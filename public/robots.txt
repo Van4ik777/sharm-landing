@@ -1,3 +1,25 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Prioritize important pages
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://sharm.ua/sitemap.xml
+
+# Allow specific directories
+Allow: /img/
+Allow: /css/
+Allow: /js/
+
+# Block unnecessary files
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.json
+Disallow: /*.map
+Disallow: /admin/
+Disallow: /private/
+
+# SEO optimization for search engines
+# Focus on: шевченковский район, самоврядування, лідерство, шарм шева
