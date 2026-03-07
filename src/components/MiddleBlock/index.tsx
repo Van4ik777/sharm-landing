@@ -60,7 +60,7 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                       <ImageCard onClick={() => handleProjectClick(featuredPastProject1.id)}>
                         <ImageContainer>
                           <OptimizedImage
-                            src={`svg/${featuredPastProject1.images[0]}`}
+                            src={`optimized/${featuredPastProject1.images[0]}`}
                             alt={featuredPastProject1.title}
                             loading="eager"
                           />
@@ -91,7 +91,7 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                       <ImageCard onClick={() => handleProjectClick(featuredPastProject2.id)}>
                         <ImageContainer>
                           <OptimizedImage
-                            src={`svg/${featuredPastProject2.images[0]}`}
+                            src={`optimized/${featuredPastProject2.images[0]}`}
                             alt={featuredPastProject2.title}
                             loading="eager"
                           />

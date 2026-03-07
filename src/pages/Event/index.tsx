@@ -67,7 +67,7 @@ const Event = () => {
     if (!data?.images) return;
     data.images.forEach((img, idx) => {
       const image = new window.Image();
-      image.src = `/img/svg/${img}`;
+      image.src = `/img/optimized/${img}`;
       if (image.complete) {
         handleImgLoad(idx);
       }
@@ -147,7 +147,7 @@ const Event = () => {
               {data.images.length === 3 ? (
                 <>
                   <img
-                    src={`/img/svg/${data.images[0]}`}
+                    src={`/img/optimized/${data.images[0]}`}
                     alt={`${data.title} - фото 1`}
                     style={{ width: "100%", maxHeight: 350, objectFit: "cover", borderRadius: 12, marginBottom: 8 }}
                     loading="eager"
@@ -160,7 +160,7 @@ const Event = () => {
                     {[data.images[1], data.images[2]].map((img, i) => (
                       <img
                         key={i}
-                        src={`/img/svg/${img}`}
+                        src={`/img/optimized/${img}`}
                         alt={`${data.title} - фото ${i + 2}`}
                         style={{ width: "100%", maxHeight: 250, objectFit: "cover", borderRadius: 12, marginBottom: 8 }}
                         loading="lazy"
@@ -174,7 +174,7 @@ const Event = () => {
                 data.images.map((img, index) => (
                   <img
                     key={index}
-                    src={`/img/svg/${img}`}
+                    src={`/img/optimized/${img}`}
                     alt={`${data.title} - фото ${index + 1}`}
                     style={{
                       width: "100%",

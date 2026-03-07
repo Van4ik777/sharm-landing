@@ -111,7 +111,7 @@ const Projects = () => {
                     cover={
                       <img
                         alt="Енергетична верба"
-                        src="/img/svg/verba_logo.png"
+                        src="/img/optimized/verba_logo.jpg"
                         style={{
                           height: 240,
                           objectFit: "cover",
@@ -175,7 +175,7 @@ const Projects = () => {
                     images && images[0] ? (
                       <Image
                         alt={title}
-                        src={`/img/svg/${images[0]}`}
+                        src={`/img/optimized/${images[0]}`}
                         style={{ height: 220, objectFit: "cover" }}
                         preview={true}
                         loading="eager"

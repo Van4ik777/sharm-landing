@@ -88,7 +88,7 @@ const Verb = () => {
     >
       <div style={{ position: 'relative' }}>
         {/* Скелетон загрузки */}
-        {imageLoading['verba_logo.png'] !== false && (
+        {imageLoading['verba_logo.jpg'] !== false && (
           <div style={{
             width: "100%",
             height: isMobile ? "200px" : "350px",
@@ -106,17 +106,17 @@ const Verb = () => {
         )}
         
         <img
-          src="/img/svg/verba_logo.png"
+          src="/img/optimized/verba_logo.jpg"
           alt="Енергетична верба - фото 2"
-          onLoad={() => handleImageLoad('verba_logo.png')}
-          onError={() => handleImageError('verba_logo.png')}
+          onLoad={() => handleImageLoad('verba_logo.jpg')}
+          onError={() => handleImageError('verba_logo.jpg')}
           style={{
             width: "100%",
             height: isMobile ? "200px" : "350px",
             objectFit: "cover",
             borderRadius: "16px",
             boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
-            display: imageLoading['verba_logo.png'] === false ? "block" : "none",
+            display: imageLoading['verba_logo.jpg'] === false ? "block" : "none",
             transition: "opacity 0.3s ease-in-out"
           }}
         />
@@ -134,7 +134,7 @@ const Verb = () => {
     >
       <div style={{ position: 'relative' }}>
         {/* Скелетон загрузки */}
-        {imageLoading['verb_main.png'] !== false && (
+        {imageLoading['verb_main.jpg'] !== false && (
           <div style={{
             width: "100%",
             height: isMobile ? "200px" : "350px",
@@ -152,17 +152,17 @@ const Verb = () => {
         )}
         
         <img
-          src="/img/svg/verb_main.png"
+          src="/img/optimized/verb_main.jpg"
           alt="Енергетична верба - фото 1"
-          onLoad={() => handleImageLoad('verb_main.png')}
-          onError={() => handleImageError('verb_main.png')}
+          onLoad={() => handleImageLoad('verb_main.jpg')}
+          onError={() => handleImageError('verb_main.jpg')}
           style={{
             width: "100%",
             height: isMobile ? "200px" : "350px",
             objectFit: "cover",
             borderRadius: "16px",
             boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
-            display: imageLoading['verb_main.png'] === false ? "block" : "none",
+            display: imageLoading['verb_main.jpg'] === false ? "block" : "none",
             transition: "opacity 0.3s ease-in-out"
           }}
         />
@@ -183,7 +183,7 @@ const Verb = () => {
     >
       <div style={{ position: 'relative' }}>
         {/* Скелетон загрузки */}
-        {imageLoading['verba1.png'] !== false && (
+        {imageLoading['verba1.jpg'] !== false && (
           <div style={{
             width: "100%",
             height: isMobile ? "200px" : "350px",
@@ -201,17 +201,17 @@ const Verb = () => {
         )}
         
         <img
-          src="/img/svg/verba1.png"
+          src="/img/optimized/verba1.jpg"
           alt="Енергетична верба - додаткове фото 1"
-          onLoad={() => handleImageLoad('verba1.png')}
-          onError={() => handleImageError('verba1.png')}
+          onLoad={() => handleImageLoad('verba1.jpg')}
+          onError={() => handleImageError('verba1.jpg')}
           style={{
             width: "100%",
             height: isMobile ? "200px" : "350px",
             objectFit: "cover",
             borderRadius: "16px",
             boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
-            display: imageLoading['verba1.png'] === false ? "block" : "none",
+            display: imageLoading['verba1.jpg'] === false ? "block" : "none",
             transition: "opacity 0.3s ease-in-out"
           }}
         />
@@ -229,7 +229,7 @@ const Verb = () => {
     >
       <div style={{ position: 'relative' }}>
         {/* Скелетон загрузки */}
-        {imageLoading['verba2.png'] !== false && (
+        {imageLoading['verba2.jpg'] !== false && (
           <div style={{
             width: "100%",
             height: isMobile ? "200px" : "350px",
@@ -247,17 +247,17 @@ const Verb = () => {
         )}
         
         <img
-          src="/img/svg/verba2.png"
+          src="/img/optimized/verba2.jpg"
           alt="Енергетична верба - додаткове фото 2"
-          onLoad={() => handleImageLoad('verba2.png')}
-          onError={() => handleImageError('verba2.png')}
+          onLoad={() => handleImageLoad('verba2.jpg')}
+          onError={() => handleImageError('verba2.jpg')}
           style={{
             width: "100%",
             height: isMobile ? "200px" : "350px",
             objectFit: "cover",
             borderRadius: "16px",
             boxShadow: "0 8px 30px rgba(44, 94, 92, 0.2)",
-            display: imageLoading['verba2.png'] === false ? "block" : "none",
+            display: imageLoading['verba2.jpg'] === false ? "block" : "none",
             transition: "opacity 0.3s ease-in-out"
           }}
         />

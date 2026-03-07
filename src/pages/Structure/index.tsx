@@ -37,7 +37,7 @@ const organs: StructureItem[] = [
     id: "president",
     title: "Президент",
     icon: icons.president,
-    image: "dima.png",
+    image: "dima.jpg",
     description:
       "Керує районним самоврядуванням, організовує засідання, координує діяльність органу. Обирається на два періоди (семестри).",
   contact: {
@@ -49,7 +49,7 @@ const organs: StructureItem[] = [
     id: "vicepresident",
     title: "Віцепрезидент",
     icon: icons.vicepresident,
-    image: "vprez.png",
+    image: "vprez.jpg",
     description:
       "Заступник президента, підтримує реалізацію ініціатив і проєктів, здійснює взаємодію з керівниками секторів самоврядування та адміністраціями шкіл, а також відповідає за організаційну координацію діяльності.",
   contact: {
@@ -116,7 +116,7 @@ const sectors: StructureItem[] = [
     id: "finance",
     title: "Сектор Підприємницької Діяльності та Фінансової Грамотності",
     icon: icons.finance,
-    image: "cult.png",
+    image: "cult.jpg",
     description: "Навчає молодь розумно керувати грошима, розвиває підприємницьке мислення.",
     minister: {
       name: 'Козаченко Артем - керівник сектору',
@@ -124,7 +124,7 @@ const sectors: StructureItem[] = [
   },
   {
     id: "sponsorship",
-    title: "Сектор Спонсорства",
+    title: "Сектор Партнерств",
     icon: icons.sponsorship,
     image: "спонсортсво.png",
     description: "Шукає партнерів і ресурси для реалізації проєктів організації.",
@@ -214,7 +214,7 @@ function Modal({
             
             {/* Изображение */}
             <img
-              src={`/img/${image.includes('культура') || image.includes('екологія') || image.includes('внутрішній') || image.includes('зовнішній') || image.includes('інформація') || image.includes('свс') || image.includes('спонсортсво') ? 'sectors' : 'svg'}/${image}`}
+              src={`/img/${image.includes('культура') || image.includes('екологія') || image.includes('внутрішній') || image.includes('зовнішній') || image.includes('інформація') || image.includes('свс') || image.includes('спонсортсво') ? 'sectors' : 'sectors'}/${image}`}
               alt={title}
               loading="eager"
               onLoad={() => onImageLoad?.(image)}
